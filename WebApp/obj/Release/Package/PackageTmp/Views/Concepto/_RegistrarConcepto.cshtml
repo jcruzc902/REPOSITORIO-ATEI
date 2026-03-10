@@ -1,0 +1,185 @@
+﻿@model WebApp.ViewModels.CatalogoConceptosRegistroViewModel
+
+@Scripts.Render("~/bundles/jqueryval")
+
+<div class="modal-header bg-dark-gray" style="border-radius: .2rem .2rem 0px 0px">
+    <h5 class="modal-title text-center"><i class="fa bi-ui-checks-grid">&nbsp;</i> @ViewBag.Title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+@using (Ajax.BeginForm("Save", "Concepto", new { area = "" }, new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "div_msg", OnBegin = "Load", OnSuccess = "Submited", OnComplete = "Stop" }))
+{
+    @Html.Hidden("submited", 0)
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div class="container-fluid">
+            <p class="h5 border-bottom mb-3">Datos generales</p>
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.B_EsObligacion)
+            @Html.HiddenFor(model => model.B_Fraccionable)
+            @Html.HiddenFor(model => model.B_ConceptoGeneral)
+            @Html.HiddenFor(model => model.B_AgrupaConcepto)
+            @Html.HiddenFor(model => model.TipoObligacion)
+            @Html.HiddenFor(model => model.AgupaConceptos)
+            @Html.HiddenFor(model => model.I_ConceptoAgrupaID)
+            @Html.HiddenFor(model => model.N_NroPagos)
+            @Html.HiddenFor(model => model.B_Porcentaje)
+            @Html.HiddenFor(model => model.C_Moneda)
+            @Html.HiddenFor(model => model.T_DescripcionLarga)
+            @Html.HiddenFor(model => model.T_Documento)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NombreConcepto, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.NombreConcepto, new { @class = "form-control" })
+                <p class="text-danger small">@Html.ValidationMessageFor(model => model.NombreConcepto)</p>
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    @Html.LabelFor(model => model.I_ModalidadIngresoID, new { @class = "control-label col-form-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(model => model.I_ModalidadIngresoID, ViewBag.Lista_Combo_CodIngreso as SelectList, "[ SELECCIONAR ]", new { @class = "form-control" })
+                        <p class="text-danger">@Html.ValidationMessageFor(model => model.I_ModalidadIngresoID)</p>
+                    </div>
+                </div>
+            </div>
+
+            @if (Model.B_EsObligacion)
+            {
+                <div class="form-group">
+                    <div class="form-row">
+                        @Html.LabelFor(model => model.I_GrupoCodRc, new { @class = "control-label col-form-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.DropDownListFor(model => model.I_GrupoCodRc, ViewBag.Lista_Combo_GrupoCodRc as SelectList, "[ SELECCIONAR ]", new { @class = "form-control" })
+                            <p class="text-danger">@Html.ValidationMessageFor(model => model.I_GrupoCodRc)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (!Model.B_EsObligacion)
+            {
+                <div class="form-group">
+                    <div class="form-row">
+                        @Html.LabelFor(model => model.T_ClasifCorto, new { @class = "control-label col-form-label col-6" })
+                        <div class="col-6">
+                            @Html.TextBoxFor(model => model.T_ClasifCorto, new { @class = "form-control" })
+                        </div>
+                        <p class="text-danger small">@Html.ValidationMessageFor(model => model.T_ClasifCorto)</p>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="form-row">
+                    @Html.LabelFor(model => model.Clasificador, new { @class = "control-label col-form-label col-6" })
+                    <div class="col-6">
+                        @Html.TextBoxFor(model => model.Clasificador, new { @class = "form-control" })
+                    </div>
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.Clasificador)</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    @Html.LabelFor(model => model.Monto, new { @class = "control-label text-sm-right col-form-label col-6" })
+                    <div class="col-6">
+                        @Html.TextBoxFor(model => model.Monto, new { @class = "form-control text-right" })
+                    </div>
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.Monto)</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    @Html.LabelFor(model => model.MontoMinimo, new { @class = "control-label text-sm-right col-form-label col-6" })
+                    <div class="col-6">
+                        @Html.TextBoxFor(model => model.MontoMinimo, new { @class = "form-control text-right" })
+                    </div>
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.MontoMinimo)</p>
+                </div>
+            </div>
+
+            @if (Model.B_EsObligacion)
+            {
+                <p class="h5 border-bottom my-3">Otras características</p>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        @Html.CheckBoxFor(model => model.EsMatricula, new { @class = "form-check-input" })
+                        @Html.LabelFor(model => model.EsMatricula, new { @class = "form-check-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @Html.CheckBoxFor(model => model.Extemporaneo, new { @class = "form-check-input" })
+                        @Html.LabelFor(model => model.Extemporaneo, new { @class = "form-check-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @Html.CheckBoxFor(model => model.B_Mora, new { @class = "form-check-input" })
+                        @Html.LabelFor(model => model.B_Mora, new { @class = "form-check-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        @Html.CheckBoxFor(model => model.Calculado, new { @class = "form-check-input" })
+                        @Html.LabelFor(model => model.Calculado, new { @class = "form-check-label" })
+                    </div>
+
+                    <div id="radios_group" class="offset-1 mt-2" style="display: @ViewBag.CalculadoVisible">
+                        <div class="row">
+                            @foreach (var item in (List<WebApp.ViewModels.SelectViewModel>)ViewBag.Lista_Opciones_CampoCalculado)
+                            {
+                                var id = "TipoCalculo_" + item.Value;
+                                <div class="form-check form-check-inline col-5">
+                                    @Html.RadioButtonFor(model => model.TipoCalculo, item.Value, new { @id = id })
+                                    <label class="form-check-label" for="@id">&nbsp;@item.TextDisplay</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="modal-footer" id="div_msg">
+        <div class="col-md-12" style="display:none" id="loading">
+            <h6>Actualizando los datos...</h6>
+
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btnsubmit"><i class="fa fa-save"></i>&nbsp;Guardar</button>
+        <button type="button" class="btn btn-secondary" id="btnCancel" data-dismiss="modal"><i class="fa fa-times-circle-o">&nbsp;</i>Cancelar</button>
+    </div>
+}
+
+<script>
+    $(document).on('ready', function () {
+        $('#btnsubmit').removeClass('disabled');
+    });
+
+    $(document).on("click", '#Calculado', function (event) {
+        let opciones = $('input[name=TipoCalculo]');
+
+        if (this.checked) {
+            $('#radios_group').show();
+            opciones.prop('disabled', false);
+        } else {
+            $('#radios_group').hide();
+            opciones.prop('disabled', true);
+            opciones.prop('checked', false);
+        }
+    });
+
+    $("form").submit(function () {
+        if (parseInt($("#submited").val()) > 0) {
+            return false;
+        }
+    });
+</script>

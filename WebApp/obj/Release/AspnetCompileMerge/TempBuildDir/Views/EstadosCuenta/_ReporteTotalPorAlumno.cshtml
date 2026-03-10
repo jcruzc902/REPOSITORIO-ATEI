@@ -1,0 +1,58 @@
+﻿@model WebApp.ViewModels.ReportePagosUnfvTotalPorAlumnoViewModel
+
+<p class="h2 text-center">@Model.Titulo.ToUpper()</p>
+
+<p class="h4 text-center"><small>@Model.SubTitulo</small></p>
+
+<div class="row">
+    <div class="col-lg-6">
+    </div>
+    <div class="col-lg-6">
+        <p class="h5 text-right"><small>Fecha consulta: <b>@Model.FechaActual</b></small></p>
+        <p class="h5 text-right"><small>Hora consulta: <b>@Model.HoraActual</b></small></p>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-sm table-condensed" id="tbl_pagos">
+        <thead>
+            <tr class="thead-light">
+                <th class="text-center">N°</th>
+                <th class="text-center">Año</th>
+                <th class="text-center">@Model.nombreColumnaDependencia</th>
+                <th class="text-center">CodRC</th>
+                <th class="text-center">Código</th>
+                <th class="text-center">Ap. Paterno</th>
+                <th class="text-center">Ap. Materno</th>
+                <th class="text-center">Nombres</th>
+                <th class="text-center">Monto Deuda (S/)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int x = 1;
+                foreach (var item in Model.listaPagos)
+                {
+                    <tr>
+                        <td class="text-center">@x</td>
+                        <td class="text-center">@item.I_Anio</td>
+                        <td>@item.T_DependenciaDesc</td>
+                        <td class="text-right">@item.C_CodRc</td>
+                        <td class="text-right">@item.C_CodAlu</td>
+                        <td class="text-right">@item.T_PersonaApp</td>
+                        <td class="text-right">@item.T_PersonaApm</td>
+                        <td class="text-right">@item.T_PersonaNom</td>
+                        <td class="text-right">@item.T_MontoDeuda</td>
+                    </tr>
+                    x++;
+                }
+            }
+            @*<tr>
+                    <th></th>
+                    <th class="text-right">Total (S/)</th>
+                    <th class="text-right">@Model.T_MontoTotal</th>
+                </tr>*@
+        </tbody>
+    </table>
+</div>
+

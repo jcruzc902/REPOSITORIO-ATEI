@@ -1,0 +1,312 @@
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.dll.config
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.pdb
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Data.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Data.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Net.Http.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Web.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Xml.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Xml.Linq.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Dapper.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Data.pdb
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.xml
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Dapper.xml
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.dll
+D:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.pdb
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.dll.config
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Domain.pdb
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Microsoft.CSharp.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Net.Http.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Web.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Xml.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\System.Xml.Linq.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Dapper.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Data.pdb
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.xml
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.xml
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.xml
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\bin\Debug\Dapper.xml
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CopyComplete
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Domain\obj\Debug\Domain.pdb
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.dll.config
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.pdb
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Net.Http.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Web.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Xml.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Xml.Linq.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Dapper.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Data.pdb
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.xml
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Dapper.xml
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.dll.config
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Domain.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Net.Http.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Web.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Xml.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\System.Xml.Linq.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Dapper.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Data.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.Data.xml
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\bin\Debug\Dapper.xml
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Domain.dll.config
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Domain.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Domain.pdb
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Net.Http.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Web.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Xml.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\System.Xml.Linq.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\WebMatrix.Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Dapper.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Data.pdb
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\WebMatrix.Data.xml
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\bin\Debug\Dapper.xml
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\obj\Debug\Domain.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Domain\obj\Debug\Domain.pdb
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.dll.config
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.pdb
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Data.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Data.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Net.Http.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Web.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Xml.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Xml.Linq.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.Data.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Dapper.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Data.pdb
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.Data.xml
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Dapper.xml
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.dll
+D:\PROYECTO SEGUNDA ACTUALIZACION\ANTES DE AGREGAR EL FUSION DE PDF\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.dll.config
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Domain.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Net.Http.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Web.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Xml.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\System.Xml.Linq.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Dapper.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Data.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.Data.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\bin\Debug\Dapper.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Domain\obj\Debug\Domain.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll.config
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Microsoft.CSharp.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Net.Http.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Web.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.Linq.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CopyComplete
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.pdb
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll.config
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.pdb
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Microsoft.CSharp.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Net.Http.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Web.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.Linq.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.pdb
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.xml
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.xml
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.xml
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.pdb
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll.config
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Domain.pdb
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Microsoft.CSharp.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Net.Http.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Web.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\System.Xml.Linq.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Data.pdb
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.Data.xml
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\WebMatrix.WebData.xml
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\bin\Debug\Dapper.xml
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Domain\obj\Debug\Domain.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Domain.dll.config
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Domain.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Domain.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Microsoft.CSharp.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Newtonsoft.Json.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Net.Http.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Web.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Xml.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\System.Xml.Linq.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\WebMatrix.Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\WebMatrix.WebData.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Dapper.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Data.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Newtonsoft.Json.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\WebMatrix.Data.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\WebMatrix.WebData.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\bin\Debug\Dapper.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\obj\Debug\Domain.csproj.Up2Date
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\obj\Debug\Domain.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Domain\obj\Debug\Domain.pdb
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Domain.dll.config
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Domain.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Domain.pdb
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Data.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Microsoft.CSharp.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Newtonsoft.Json.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Data.DataSetExtensions.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Data.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Net.Http.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Web.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Xml.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\System.Xml.Linq.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\WebMatrix.Data.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\WebMatrix.WebData.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Dapper.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Data.pdb
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Newtonsoft.Json.xml
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\WebMatrix.Data.xml
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\WebMatrix.WebData.xml
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\bin\Debug\Dapper.xml
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\obj\Debug\Domain.csproj.Up2Date
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\obj\Debug\Domain.dll
+C:\AGEI\REPOSITORIO-AGEI-060326\Domain\obj\Debug\Domain.pdb

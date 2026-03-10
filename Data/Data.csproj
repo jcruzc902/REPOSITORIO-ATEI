@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02BE7951-A281-420A-9D8D-856C384F7389}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection\Database.cs" />
+    <Compile Include="Connection\ResponseData.cs" />
+    <Compile Include="Procedures\USP_I_RegistrarAmpliacionCredito.cs" />
+    <Compile Include="Procedures\USP_S_ListaObligaciones.cs" />
+    <Compile Include="Procedures\USP_S_ReporteTotalObligacionesPorFacultad.cs" />
+    <Compile Include="Views\VW_PagosParaDevolucion.cs" />
+    <Compile Include="Procedures\USP_U_DarBajaComprobante.cs" />
+    <Compile Include="Procedures\USP_U_EliminarMatricula.cs" />
+    <Compile Include="Procedures\USP_D_EliminarSerieComprobante.cs" />
+    <Compile Include="Procedures\USP_D_EliminarTipoComprobante.cs" />
+    <Compile Include="Procedures\USP_IU_GenerarObligacionesPosgrado_X_Ciclo.cs" />
+    <Compile Include="Procedures\USP_IU_GenerarObligacionesPregrado_X_Ciclo.cs" />
+    <Compile Include="Procedures\USP_I_GrabarAlumnoMultaNoVotar.cs" />
+    <Compile Include="Procedures\USP_I_GrabarComprobantePago.cs" />
+    <Compile Include="Procedures\USP_I_GrabarPagoObligaciones.cs" />
+    <Compile Include="Procedures\USP_I_GrabarPagoTasas.cs" />
+    <Compile Include="Procedures\USP_I_GrabarSerieComprobante.cs" />
+    <Compile Include="Procedures\USP_I_GrabarTasaUnfv.cs" />
+    <Compile Include="Procedures\USP_I_GrabarTipoComprobante.cs" />
+    <Compile Include="Procedures\USP_S_CantidadDePagosRegistrados_X_Dia.cs" />
+    <Compile Include="Procedures\USP_S_ListadoEstadoObligaciones.cs" />
+    <Compile Include="Procedures\USP_IU_RelacionarPagoConObligacion.cs" />
+    <Compile Include="Procedures\USP_S_ObtenerComprobantePago.cs" />
+    <Compile Include="Procedures\USP_S_ListarComprobantePago.cs" />
+    <Compile Include="Procedures\USP_S_Listar_ObligacionesPendientes.cs" />
+    <Compile Include="Procedures\USP_S_ObtenerFechaVencimientoObligacion.cs" />
+    <Compile Include="Procedures\USP_S_ReportePagoObligacionesPosgrado.cs" />
+    <Compile Include="Procedures\USP_S_ReportePagoObligacionesPregrado.cs" />
+    <Compile Include="Procedures\USP_S_ResumenAnualPagoDeObligaciones_X_Dia.cs" />
+    <Compile Include="Procedures\USP_S_ValidarCodOperacionTasa.cs" />
+    <Compile Include="Procedures\USP_S_ValidarCodOperacionObligacion.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarEstadoComprobantePago.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarEstadoSerieComprobante.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarEstadoTipoComprobante.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarFechaVencimientoObligaciones.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarConceptoPago.cs" />
+    <Compile Include="Procedures\USP_I_GrabarConceptoPago.cs" />
+    <Compile Include="Procedures\USP_IU_GrabarMatricula.cs" />
+    <Compile Include="Procedures\USP_I_GrabarProceso.cs" />
+    <Compile Include="Procedures\USP_I_GrabarCtaDeposito_Proceso.cs" />
+    <Compile Include="Procedures\USP_S_ConceptoPago.cs" />
+    <Compile Include="Procedures\USP_S_CuentaDeposito_Habilitadas.cs" />
+    <Compile Include="Procedures\USP_S_DocumentacionUsuarioRoles.cs" />
+    <Compile Include="Procedures\USP_S_Procesos.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarMontoObligaciones.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarPagoTasa.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarProceso.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarCtaDeposito_Proceso.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarSerieComprobante.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarTasaUnfv.cs" />
+    <Compile Include="Procedures\USP_U_ActualizarTipoComprobante.cs" />
+    <Compile Include="Procedures\USP_U_AnularObligacionAlumno.cs" />
+    <Compile Include="Procedures\USP_U_DesenlazarPagoObligacion.cs" />
+    <Compile Include="Procedures\USP_S_ObtenerCuotaPago.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\TC_ClasificadorEquivalenciaAnio.cs" />
+    <Compile Include="Tables\TC_ClasificadorEquivalencia.cs" />
+    <Compile Include="Tables\TC_EstadoComprobante.cs" />
+    <Compile Include="Tables\TC_SerieComprobante.cs" />
+    <Compile Include="Tables\TC_TipoComprobante.cs" />
+    <Compile Include="Tables\TI_CtaDepo_Servicio.cs" />
+    <Compile Include="Tables\TR_Comprobante.cs" />
+    <Compile Include="Views\VW_Servicio_X_CuentaDeposito.cs" />
+    <Compile Include="Tables\TI_ConceptoCategoriaPago.cs" />
+    <Compile Include="Tables\TI_TasaUnfv.cs" />
+    <Compile Include="Tables\TI_TasaUnfv_CtaDepoServicio.cs" />
+    <Compile Include="Tables\TRI_PagoProcesadoUnfv.cs" />
+    <Compile Include="Tables\TR_ConstanciaPago.cs" />
+    <Compile Include="Tables\TR_ImportacionArchivos.cs" />
+    <Compile Include="Tables\TR_DevolucionPago.cs" />
+    <Compile Include="Tables\TR_ObligacionAluCab.cs" />
+    <Compile Include="Tables\TS_CampoTablaPago.cs" />
+    <Compile Include="Tables\TC_ColumnaSeccion.cs" />
+    <Compile Include="Tables\TC_SeccionArchivo.cs" />
+    <Compile Include="Types\DataPagoObligacionesResult.cs" />
+    <Compile Include="Types\DataPagoTasasResult.cs" />
+    <Compile Include="Types\MultaNoVotarResult.cs" />
+    <Compile Include="Views\PagoObligacionDetalle.cs" />
+    <Compile Include="Views\VW_DevolucionPago.cs" />
+    <Compile Include="Views\VW_CtaDepositoProceso.cs" />
+    <Compile Include="Views\VW_MatriculaAlumno.cs" />
+    <Compile Include="Types\DataMatriculaResult.cs" />
+    <Compile Include="Tables\TC_ClasificadorPresupuestal.cs" />
+    <Compile Include="Tables\TC_Concepto.cs" />
+    <Compile Include="Tables\TC_DependenciaUNFV.cs" />
+    <Compile Include="Tables\TC_CatalogoOpcion.cs" />
+    <Compile Include="Tables\TC_CategoriaPago.cs" />
+    <Compile Include="Tables\TC_CuentaDeposito.cs" />
+    <Compile Include="Tables\TC_EntidadFinanciera.cs" />
+    <Compile Include="Tables\TC_Usuario.cs" />
+    <Compile Include="Tables\TI_ConceptoPago.cs" />
+    <Compile Include="Tables\TI_CtaDepo_Proceso.cs" />
+    <Compile Include="Tables\TI_TipoArchivo_EntidadFinanciera.cs" />
+    <Compile Include="Tables\Webpages_Roles.cs" />
+    <Compile Include="Procedures\USP_S_ListarCuotasPagos_X_Alumno.cs" />
+    <Compile Include="Views\VW_DetalleObligaciones.cs" />
+    <Compile Include="Views\VW_PagoBancoObligaciones.cs" />
+    <Compile Include="Views\VW_Pagos.cs" />
+    <Compile Include="Views\VW_PagoTasas.cs" />
+    <Compile Include="Views\VW_Tasas.cs" />
+    <Compile Include="Views\VW_Usuario.cs" />
+    <Compile Include="Tables\TS_CorreoAplicacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\bootstrap-grid.css.map" />
+    <None Include="Content\bootstrap-grid.min.css.map" />
+    <None Include="Content\bootstrap-reboot.css.map" />
+    <None Include="Content\bootstrap-reboot.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <None Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\bootstrap.bundle.min.js.map" />
+    <None Include="Scripts\bootstrap.js.map" />
+    <None Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\esm\popper-utils.min.js.map" />
+    <None Include="Scripts\esm\popper.js.map" />
+    <None Include="Scripts\esm\popper.min.js.map" />
+    <None Include="Scripts\jquery-3.0.0.min.map" />
+    <None Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <None Include="Scripts\popper-utils.js.map" />
+    <None Include="Scripts\popper-utils.min.js.map" />
+    <None Include="Scripts\popper.js.map" />
+    <None Include="Scripts\popper.min.js.map" />
+    <None Include="Scripts\README.md" />
+    <None Include="Scripts\umd\popper-utils.js.map" />
+    <None Include="Scripts\umd\popper-utils.min.js.map" />
+    <None Include="Scripts\umd\popper.js.map" />
+    <None Include="Scripts\umd\popper.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

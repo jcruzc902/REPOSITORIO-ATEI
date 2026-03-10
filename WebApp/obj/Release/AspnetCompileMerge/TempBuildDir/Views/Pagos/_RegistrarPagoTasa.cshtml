@@ -1,0 +1,276 @@
+﻿@model WebApp.ViewModels.PagoTasaViewModel
+
+
+<link href="~/Assets/fileInput/css/fileinput.min.css" rel="stylesheet" />
+<script src="~/Assets/fileInput/js/fileinput.min.js"></script>
+<script src="~/Assets/fileInput/js/locales/es.js"></script>
+<script src="~/Assets/jquery/jquery.form.js"></script>
+@Scripts.Render("~/bundles/jqueryval")
+
+@using (Ajax.BeginForm("RegistrarPagoTasa", "Pagos", null,
+    new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "div_footer",
+        OnBegin = "Load",
+        OnComplete = "Stop"
+    }, new { @id = "form-tasas-manual" })
+)
+{
+    <div class="modal-header">
+        <h5 class="modal-title">
+            <i class="fa fa-paperclip text-primary">&nbsp;</i>
+            Registro de pago de tasas
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="col-md-12">
+            @Html.Hidden("Submited", 0)
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.moneda)
+            @Html.HiddenFor(model => model.tipoPago)
+
+            <div class="form-group form-row">
+                <label for="codigoDepositante" class="control-label col-form-label col-md-3 col-sm-4 col-12">Código del depositante</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.codigoDepositante, new { @class = "form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.codigoDepositante)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="nombreDepositante" class="control-label col-form-label col-md-3 col-sm-4 col-12">Nombre del depositante</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.nombreDepositante, new { @class = "form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.nombreDepositante)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="tasa" class="control-label col-form-label col-md-3 col-sm-4 col-12">Tasa</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.DropDownListFor(model => model.tasa, ViewBag.Tasas as SelectList, "", new { @class = "select-filter form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.tasa)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label class="control-label col-form-label col-md-3 col-sm-4 col-12">Monto</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.I_MontoPago, new { @class = "form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.I_MontoPago)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label class="control-label col-form-label col-md-3 col-sm-4 col-12">Cantidad</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.cantidad, new { @class = "form-control OnlyNumbers" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.cantidad)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="codigoOperacion" class="control-label col-form-label col-md-3 col-sm-4 col-12">Código de operación</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.codigoOperacion, new { @class = "form-control OnlyNumbers", @maxlength = "50" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.codigoOperacion)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="codigoReferencia" class="control-label col-form-label col-md-3 col-sm-4 col-12">Código de referencia</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.codigoReferencia, new { @class = "form-control", @maxlength = "50" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.codigoReferencia)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="C_CodigoInterno" class="control-label col-form-label col-md-3 col-sm-4 col-12">Código interno (BCP)</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.C_CodigoInterno, new { @class = "form-control", @maxlength = "250" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.C_CodigoInterno)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="EntidadFinanciera" class="control-label col-form-label col-md-3 col-sm-4 col-12">Entidad financiera</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.DropDownListFor(model => model.idEntidadFinanciera, ViewBag.EntidadesFinancieras as SelectList, "[ SELECCIONAR ]", new { @class = "form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.idEntidadFinanciera)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="idCtaDeposito" class="control-label col-form-label col-md-3 col-sm-4 col-12">Cta. Depósito</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.DropDownListFor(model => model.idCtaDeposito, ViewBag.CtaDeposito as SelectList, "", new { @class = "form-control" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(model => model.idCtaDeposito)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="fechaPago" class="control-label col-form-label col-md-3 col-sm-4 col-12">
+                    Fecha de pago
+                </label>
+                <div class="col-md-3 col-sm-10 col-12">
+                    <div class="input-group date">
+                        @Html.TextBoxFor(m => m.fechaPago, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly" })
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+                        </div>
+                    </div>
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.fechaPago)</p>
+                </div>
+                <div class="col-md-2 col-sm-4 col-12">
+                    @Html.DropDownListFor(model => model.horas, ViewBag.Horas as SelectList, new { @class = "form-control" })
+                </div>
+                <div class="col-md-2 col-sm-4 col-12">
+                    @Html.DropDownListFor(model => model.minutos, ViewBag.Minutos as SelectList, new { @class = "form-control" })
+                </div>
+                <div class="col-md-2 col-sm-4 col-12">
+                    @Html.DropDownListFor(model => model.segundos, ViewBag.Minutos as SelectList, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="lugarPago" class="control-label col-form-label col-md-3 col-sm-4 col-12">Lugar de pago</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextBoxFor(m => m.lugarPago, new { @class = "form-control", @maxlength = "250" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.lugarPago)</p>
+                </div>
+            </div>
+
+            <div class="form-group form-row">
+                <label for="observacion" class="control-label col-form-label col-md-3 col-sm-4 col-12">Observación</label>
+                <div class="col-md-9 col-sm-10 col-12">
+                    @Html.TextAreaFor(m => m.observacion, new { @class = "form-control", @maxlength = "250", @rows = "3" })
+                    <p class="text-danger small">@Html.ValidationMessageFor(m => m.observacion)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer" id="div_footer">
+        <div class="col-md-12" style="display:none" id="loading">
+            <h6>Registrando pago...</h6>
+
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btnsubmit"><i class="fa fa-save"></i> Grabar pago</button>
+        <button type="button" class="btn btn-info" id="btnNuevo"><i class="fa fa-file"></i> Limpiar campos</button>
+        <button type="button" class="btn btn-secondary" id="btnCancel" data-dismiss="modal"><i class="fa fa-times-circle-o"></i> Cancelar</button>
+    </div>
+}
+
+<script>
+    $('.input-group.date').datepicker({
+        todayBtn: 'linked',
+        language: 'es',
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        weekStart: 0,
+        orientation: 'bottom auto',
+    }).on('hide', function (e) {
+        e.stopPropagation();
+    });
+
+    $('.OnlyNumbers').bind('keypress', function (e) {
+        return (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) ? false : true;
+    });
+
+    $(document).ready(function () {
+        $('.select-filter').select2({
+            dropdownParent: $('#modal-container-lg'),
+            theme: 'bootstrap4',
+            placeholder: 'SELECCIONAR',
+            allowClear: true
+        }).on('closing', function (e) {
+            e.stopPropagation();
+        });
+    });
+
+    $(document).on('change', '#form-tasas-manual #idEntidadFinanciera', function (e) {
+        let idEntidadFinanc = this.value;
+
+        ObtenerCtasDeposito(idEntidadFinanc);
+    });
+
+    $(document).on('click', '#form-tasas-manual #btnNuevo', function (e) {
+        $('#form-tasas-manual #codigoDepositante').val('');
+        $('#form-tasas-manual #nombreDepositante').val('');
+
+        $('#form-tasas-manual #tasa').val(null).trigger('change');
+
+        $('#form-tasas-manual #cantidad').val(1);
+        $('#form-tasas-manual #codigoOperacion').val('');
+        $('#form-tasas-manual #codigoReferencia').val('');
+
+        $('#form-tasas-manual #idEntidadFinanciera').val('');
+        limpiarCtasDeposito();
+
+        $('#form-tasas-manual #fechaPago').val('');
+        $('#form-tasas-manual #horas').val(0);
+        $('#form-tasas-manual #minutos').val(0);
+        $('#form-tasas-manual #lugarPago').val('');
+
+        $('#form-tasas-manual #I_MontoPago').val(0);
+        $('#form-tasas-manual #C_CodigoInterno').val('');
+
+        $('#form-tasas-manual #div_footer #div_msg').remove();
+        $('.field-validation-error').html('').addClass('field-validation-valid').removeClass('field-validation-error');
+    });
+
+    function ObtenerCtasDeposito(idEntidadFinanc) {
+        let cmbCtasDeposito = $('#form-tasas-manual #idCtaDeposito');
+
+        if (idEntidadFinanc !== undefined && idEntidadFinanc !== null && !isNaN(idEntidadFinanc) && idEntidadFinanc > 0) {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetCtasDepositoPorBco", "Service", new { httproute = "ActionApi" })' + '/' + idEntidadFinanc,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbCtasDeposito.empty();
+                },
+                success: function (data) {
+                    if (data) {
+                        let html = '';
+
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>';
+                        });
+
+                        cmbCtasDeposito.html(html);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var jsonException = JSON.parse(xhr.responseText);
+                    MostrarMensajeSistema(jsonException.Message, 'error');
+                }
+            });
+        } else {
+            cmbCtasDeposito.empty();
+        }
+    }
+
+    function limpiarCtasDeposito() {
+        $('#form-tasas-manual #idCtaDeposito').empty();
+    }
+
+    function MostrarMensajeSistema(errorMessage, messageType) {
+        Swal.fire({
+            title: '',
+            text: errorMessage,
+            icon: messageType,
+            timer: 6000
+        });
+    }
+    
+</script>

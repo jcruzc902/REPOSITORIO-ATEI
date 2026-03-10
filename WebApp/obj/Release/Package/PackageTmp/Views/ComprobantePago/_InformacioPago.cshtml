@@ -1,0 +1,346 @@
+﻿@model IEnumerable<WebApp.Models.ComprobantePagoModel>
+@Scripts.Render("~/bundles/jqueryval")
+
+@{
+    var tieneComprobante = (bool)ViewBag.TieneComprobante;
+    var pagoBancoID = (int)ViewBag.PagoBancoID;
+    var comprobanteID = (int?)ViewBag.ComprobanteID;
+    int contadorFila = 1;
+}
+
+<div class="modal-header bg-dark-gray" style="border-radius: .2rem .2rem 0px 0px">
+    <h5 class="modal-title text-center"><i class="fa bi-layers-half">&nbsp;</i> @ViewBag.Title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="modal-body" id="frmGenerarComprobante">
+    <dl class="row">
+        <dt class="col-sm-4 mb-3">Código Depositante</dt>
+        <dd class="col-sm-8">@Model.First().codDepositante</dd>
+
+        <dt class="col-sm-4 mb-3">Nom. Depositante</dt>
+        <dd class="col-sm-8">@Model.First().nomDepositante</dd>
+
+        <dt class="col-sm-4 mb-3">Total Pagado</dt>
+        <dd class="col-sm-8">@Model.Sum(x => x.montoTotal).ToString(Domain.Helpers.FormatosDecimal.BASIC_DECIMAL)</dd>
+
+        <dt class="col-sm-4 mb-3">Fecha Pago</dt>
+        <dd class="col-sm-8">@Model.First().fecPago.ToString(Domain.Helpers.FormatosDateTime.BASIC_DATETIME)</dd>
+
+        <dt class="col-sm-4 mb-3">Cód. Operacion</dt>
+        <dd class="col-sm-8">@Model.First().codOperacion</dd>
+
+        @if (Model.First().entidadFinanID == Domain.Helpers.Bancos.BCP_ID)
+        {
+            <dt class="col-sm-4 mb-3">Cód. Interno</dt>
+            <dd class="col-sm-8">@Model.First().codigoInterno</dd>
+        }
+
+        <dt class="col-sm-4 mb-3">Banco</dt>
+        <dd class="col-sm-8">@Model.First().entidadDesc</dd>
+
+        <dt class="col-sm-4 mb-3">Tip. Comprobante</dt>
+        @if (tieneComprobante)
+        {
+            <dd class="col-sm-8">
+                @Model.First().tipoComprobanteDesc
+                <input type="hidden" value="@Model.First().tipoComprobanteID.Value" id="hdnTipoComprobante" />
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-8">
+                @Html.DropDownList("cmbTipoComprobante", ViewBag.ComboTipoComprobante as SelectList, new { @class = "form-control text-uppercase" })
+            </dd>
+        }
+
+        <dt class="col-sm-4 mb-3">Serie Comprobante</dt>
+        @if (tieneComprobante)
+        {
+            <dd class="col-sm-8">@Model.First().comprobantePago</dd>
+        }
+        else
+        {
+            <dd class="col-sm-8">
+                @Html.DropDownList("cmbSerie", ViewBag.ComboSerieComprobante as SelectList, new { @class = "form-control" })
+            </dd>
+        }
+
+        <dt class="col-sm-4 mb-3">Es Gravado</dt>
+        @if (tieneComprobante)
+        {
+            <dd class="col-sm-8">@Model.First().gravadoDesc</dd>
+        }
+        else
+        {
+            <dd class="col-sm-8">
+                <select id="cmbEsGravado" class="form-control">
+                    <option value="True">Sí</option>
+                    <option value="False" selected="selected">No</option>
+                </select>
+            </dd>
+        }
+
+        @if (tieneComprobante)
+        {
+            if (Model.First().tipoComprobanteID.Value == 1)
+            {
+                <dt class="col-sm-4 mb-3">RUC Receptor</dt>
+                <dd class="col-sm-8">@Model.First().ruc</dd>
+
+                <dt class="col-sm-4 mb-3">Dirección</dt>
+                <dd class="col-sm-8">@Model.First().direccion</dd>
+            }
+        }
+        else
+        {
+            <dt class="col-sm-4 mb-3" id="lblRuc">RUC Receptor</dt>
+            <dd class="col-sm-8" id="ddRuc">
+                <input type="text" name="txtRuc" id="txtRuc" class="form-control" maxlength="11" />
+            </dd>
+
+            <dt class="col-sm-4 mb-3" id="lblDireccion">Dirección</dt>
+            <dd class="col-sm-8" id="ddDireccion">
+                <input type="text" name="txtDireccion" id="txtDireccion" class="form-control" maxlength="250" />
+            </dd>
+        }
+
+        @if (tieneComprobante)
+        {
+            <dt class="col-sm-4 mb-3">Estado</dt>
+            <dd class="col-sm-8 @Model.First().textColorEstado">@Model.First().estadoComprobanteDesc</dd>
+        }
+    </dl>
+
+    @if (tieneComprobante && Model.First().estadoComprobanteCod == Domain.Helpers.EstadoComprobante.ERROR)
+    {
+        <hr style="border-block-style: solid;" />
+        <dl class="row">
+            <dt class="col-sm-4 mb-3">Tip. Comprobante</dt>
+            <dd class="col-sm-8">
+                @Html.DropDownList("cmbTipoComprobante", ViewBag.ComboTipoComprobante as SelectList, new { @class = "form-control text-uppercase" })
+            </dd>
+
+            <dt class="col-sm-4 mb-3">Serie Comprobante</dt>
+            <dd class="col-sm-8">
+                @Html.DropDownList("cmbSerie", ViewBag.ComboSerieComprobante as SelectList, new { @class = "form-control" })
+            </dd>
+
+            <dt class="col-sm-4 mb-3">Es Gravado</dt>
+            <dd class="col-sm-8">
+                <select id="cmbEsGravado" class="form-control">
+                    <option value="True">Sí</option>
+                    <option value="False">No</option>
+                </select>
+            </dd>
+
+            <dt class="col-sm-4 mb-3" id="lblRuc">RUC Receptor</dt>
+            <dd class="col-sm-8" id="ddRuc">
+                <input type="text" name="txtRuc" id="txtRuc" class="form-control" maxlength="11" />
+            </dd>
+
+            <dt class="col-sm-4 mb-3" id="lblDireccion">Dirección</dt>
+            <dd class="col-sm-8" id="ddDireccion">
+                <input type="text" name="txtDireccion" id="txtDireccion" class="form-control" maxlength="250" />
+            </dd>
+        </dl>
+    }
+
+    @if (tieneComprobante && Model.First().estadoComprobanteCod == Domain.Helpers.EstadoComprobante.BAJA)
+    {
+        <dl class="row">
+            <dt class="col-sm-4 mb-3">Fecha baja</dt>
+            <dd class="col-sm-8">
+                <input class="form-control" type="text" readonly="readonly" value="@Model.First().fechaEmision" />
+            </dd>
+
+            <dt class="col-sm-4 mb-3">Motivo baja</dt>
+            <dd class="col-sm-8">
+                <textarea readonly="readonly" class="form-control" maxlength="250" rows="3">@Model.First().entidadDesc</textarea>
+            </dd>
+        </dl>
+    }
+
+    <table class="table table-bordered table-hover table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Concepto</th>
+                <th>Monto</th>
+                <th>Mora</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@contadorFila</td>
+                    <td>@item.concepto</td>
+                    <td>@item.montoPagado</td>
+                    <td>@item.interesMoratorio</td>
+                </tr>
+                contadorFila++;
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal-footer" id="div_msg_comprobante">
+    <div class="col-md-12" style="display: none;" id="loading">
+        <h6></h6>
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    @if (!tieneComprobante)
+    {
+        <input type="hidden" id="hdnEsNuevaGeneracion" name="hdnEsNuevaGeneracion" value="True" />
+        <button type="button" class="btn btn-primary" id="btnGenerar"><i class="fa fa-cog"></i> Generar Número</button>
+    }
+    else
+    {
+        if (Model.First().estadoComprobanteCod == Domain.Helpers.EstadoComprobante.ERROR)
+        {
+            <input type="hidden" id="hdnEsNuevaGeneracion" name="hdnEsNuevaGeneracion" value="False" />
+            <button type="button" class="btn btn-primary" id="btnGenerar"><i class="fa fa-cog"></i> Generar Otro Número</button>
+        }
+        else if (Model.First().estadoComprobanteCod == Domain.Helpers.EstadoComprobante.NOFILE)
+        {
+            <button type="button" class="btn btn-primary" id="btnGenerarSoloArchivo"><i class="fa fa-file"></i> Generar sólo archivo</button>
+        }
+    }
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times-circle-o"></i> Cancelar</button>
+</div>
+
+<script type="text/javascript">
+    $(document).on('click', '#div_msg_comprobante #btnGenerar', function (e) {
+        let continuarRegistro = true;
+        let rucValue = $('#txtRuc').val().trim();
+        let regex = /^[0-9]+$/;
+
+        if ($('#frmGenerarComprobante #cmbTipoComprobante').val() == TIPO_COMPROBANTE.FACTURA) {
+            if (rucValue.length !== 11) {
+                continuarRegistro = false;
+            } else if (!regex.test(rucValue)) {
+                continuarRegistro = false;
+            }
+        }
+
+        if (continuarRegistro) {
+            let parametros = {
+                pagoBancoId: @pagoBancoID,
+                tipoComprobanteID: $('#frmGenerarComprobante #cmbTipoComprobante').val(),
+                serieID: $('#frmGenerarComprobante #cmbSerie').val(),
+                esGravado: $('#frmGenerarComprobante #cmbEsGravado').val(),
+                esNuevoRegistro: $('#hdnEsNuevaGeneracion').val(),
+                ruc: $('#frmGenerarComprobante #txtRuc').val(),
+                direccion: $('#frmGenerarComprobante #txtDireccion').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GenerarNumeroComprobante", "ComprobantePago")',
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    $('#div_msg_comprobante #loading').css('display', 'block');
+                    $('#div_msg_comprobante #loading h6').html('Generando número de comprobante...');
+                },
+                success: function (data) {
+                    if (data !== null) {
+                        let icon = MESSAGE_TYPE.ERROR;
+
+                        if (data.Value) {
+                            icon = MESSAGE_TYPE.SUCCESS;
+                        }
+
+                        Swal.fire({
+                            title: '',
+                            text: data.Message,
+                            icon: icon,
+                            timer: 6000
+                        });
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var jsonException = JSON.parse(xhr.responseText);
+                },
+                complete: function () {
+                    $('#div_msg_comprobante #loading').css('display', 'none');
+                    $('#div_msg_comprobante #loading h6').html('');
+                }
+            });
+        } else {
+            Swal.fire({
+                title: '',
+                text: "El campo RUC Receptor es obligatorio y debe estar conformado por 11 dígitos.",
+                icon: MESSAGE_TYPE.WARNING,
+                timer: 6000
+            });
+        }
+    });
+
+    $(document).on('click', '#div_msg_comprobante #btnGenerarSoloArchivo', function (e) {
+        let parametros = {
+            pagoBancoId: @pagoBancoID,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GenerarSoloArchivo", "ComprobantePago")',
+            data: parametros,
+            dataType: 'json',
+            beforeSend: function () {
+                $('#div_msg_comprobante #loading').css('display', 'block');
+                $('#div_msg_comprobante #loading h6').html('Generando archivo TXT...');
+            },
+            success: function (data) {
+                if (data !== null) {
+                    let icon = MESSAGE_TYPE.ERROR;
+
+                    if (data.Value) {
+                        icon = MESSAGE_TYPE.SUCCESS;
+                    }
+
+                    Swal.fire({
+                        title: '',
+                        text: data.Message,
+                        icon: icon,
+                        timer: 6000
+                    });
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                var jsonException = JSON.parse(xhr.responseText);
+            },
+            complete: function () {
+                $('#div_msg_comprobante #loading').css('display', 'none');
+                $('#div_msg_comprobante #loading h6').html('');
+            }
+        });
+    });
+
+    $(document).on('change', '#frmGenerarComprobante #cmbTipoComprobante', function (e) {
+        mostrarCamposFactura();
+    });
+
+    mostrarCamposFactura();
+
+    function mostrarCamposFactura() {
+        let idTipoComprobante = $('#frmGenerarComprobante #cmbTipoComprobante').val();
+
+        let display = 'none';
+
+        if (idTipoComprobante == TIPO_COMPROBANTE.FACTURA) {
+            display = 'block';
+        }
+
+        $('#frmGenerarComprobante #lblRuc').css('display', display);
+        $('#frmGenerarComprobante #ddRuc').css('display', display);
+        $('#frmGenerarComprobante #lblDireccion').css('display', display);
+        $('#frmGenerarComprobante #ddDireccion').css('display', display);
+
+        $('#frmGenerarComprobante #txtRuc').val("");
+        $('#frmGenerarComprobante #txtDireccion').val("");
+    }
+</script>

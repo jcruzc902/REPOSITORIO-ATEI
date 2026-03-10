@@ -1,0 +1,198 @@
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\Data.pdb
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\Dapper.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\Microsoft.CSharp.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Configuration.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Configuration.Install.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Data.DataSetExtensions.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Net.Http.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Xml.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\System.Xml.Linq.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\bin\Release\Dapper.xml
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\obj\Release\Data.csproj.AssemblyReference.cache
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\obj\Release\Data.csproj.CopyComplete
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\obj\Release\Data.dll
+F:\git\repos\00043-DWeb-CuentasPorCobrar\src\app\00043-CuentasPorCobrar\Data\obj\Release\Data.pdb
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Data.pdb
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Dapper.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Microsoft.CSharp.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Configuration.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Configuration.Install.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Data.DataSetExtensions.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Net.Http.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Xml.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Xml.Linq.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Dapper.xml
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.AssemblyReference.cache
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.CopyComplete
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.dll
+D:\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Data.pdb
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Dapper.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Microsoft.CSharp.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Configuration.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Configuration.Install.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Data.DataSetExtensions.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Net.Http.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Xml.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\System.Xml.Linq.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\bin\Release\Dapper.xml
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.AssemblyReference.cache
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.csproj.CopyComplete
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.dll
+D:\Trabajo\Proyectos\WebApp_CuentasPorCobrar\Data\obj\Release\Data.pdb
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\Data.pdb
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\Dapper.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\Microsoft.CSharp.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Configuration.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Configuration.Install.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Data.DataSetExtensions.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Net.Http.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Xml.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\System.Xml.Linq.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\bin\Release\Dapper.xml
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\obj\Release\Data.csproj.AssemblyReference.cache
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\obj\Release\Data.csproj.CopyComplete
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\obj\Release\Data.dll
+D:\proyecto\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_0000\Data\obj\Release\Data.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\Data.pdb
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\Dapper.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\Microsoft.CSharp.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Configuration.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Configuration.Install.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Data.DataSetExtensions.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Net.Http.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Xml.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\System.Xml.Linq.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\bin\Release\Dapper.xml
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\obj\Release\Data.csproj.AssemblyReference.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\obj\Release\Data.csproj.CopyComplete
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\obj\Release\Data.dll
+D:\PROYECTO_se2\00043_WebApp_CuentasPorCobrar_F_1.0.52_20250604_1114\Data\obj\Release\Data.pdb
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.pdb
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Microsoft.CSharp.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.Install.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Net.Http.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.Linq.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.xml
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CopyComplete
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.dll
+C:\Users\ctambini\Desktop\descargas hantarasito\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.pdb
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.pdb
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Microsoft.CSharp.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.Install.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Net.Http.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.Linq.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.xml
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CopyComplete
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.dll
+C:\Users\ctambini\Desktop\des_hant\CODIGO FUENTE PARA VISUAL\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.pdb
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Data.pdb
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Microsoft.CSharp.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Configuration.Install.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Data.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Net.Http.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\System.Xml.Linq.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\bin\Release\Dapper.xml
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.csproj.CopyComplete
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.dll
+C:\Users\ctambini\Desktop\13_ene\00043_WebApp_CuentasPorCobrar_F_1.0.55_20251017_0000\Data\obj\Release\Data.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Data.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Dapper.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Microsoft.CSharp.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Configuration.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Configuration.Install.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Net.Http.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Xml.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Xml.Linq.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Dapper.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.CopyComplete
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.pdb
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Data.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Data.pdb
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Dapper.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Microsoft.CSharp.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Configuration.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Configuration.Install.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Data.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Net.Http.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Xml.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\System.Xml.Linq.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\bin\Release\Dapper.xml
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.csproj.CopyComplete
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.dll
+C:\Users\User\Desktop\AGEI\00043_WebApp_CuentasPorCobrar_F_1.0.55_20260113_1250\Data\obj\Release\Data.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\Data.pdb
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\Dapper.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\Microsoft.CSharp.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Configuration.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Configuration.Install.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Data.DataSetExtensions.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Net.Http.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Xml.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\System.Xml.Linq.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\bin\Release\Dapper.xml
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\obj\Release\Data.csproj.AssemblyReference.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\obj\Release\Data.csproj.CopyComplete
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\obj\Release\Data.dll
+C:\AGEI\00043_WebApp_CuentasPorCobrar_020326\Data\obj\Release\Data.pdb

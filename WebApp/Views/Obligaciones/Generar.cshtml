@@ -1,0 +1,810 @@
+﻿@model IEnumerable<WebApp.ViewModels.EstadoObligacionViewModel>
+@using GridMvc.Html
+
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-refresh">&nbsp;</i>Operaciones </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa bi-person-lines-fill">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>
+        </section>
+    </div>
+    <br />
+    <div class="col-12 mt-4">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item w-50" role="presentation">
+                        <a class="nav-link text-center active" id="grupal-tab" data-toggle="pill" href="#grupal" role="tab" aria-controls="grupal" aria-selected="true">
+                            <i class="fa fa-users">&nbsp;</i> Por especialidad
+                        </a>
+                    </li>
+                    <li class="nav-item w-50" role="presentation">
+                        <a class="nav-link text-center" id="individial-tab" data-toggle="pill" href="#individial" role="tab" aria-controls="individial" aria-selected="false">
+                            <i class="fa fa-fw fa-user">&nbsp;</i> Por alumno
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="grupal" role="tabpanel" aria-labelledby="grupal-tab">
+                        <div class="card">
+                            <div class="card-body bg-light-gray">
+                                <form id="frmGenerarOblig" action="@Url.Action("Generar", "Obligaciones")" method="GET">
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-1 col-md-4 col-12">
+                                            <label for="anio">Año</label>
+                                            @Html.DropDownList("anio", ViewBag.Anios as SelectList, new { @class = "form-control form-control-sm" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-md-4 col-12">
+                                            <label for="periodo">Periodo</label>
+                                            @Html.DropDownList("periodo", ViewBag.Periodos as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-md-4 col-12">
+                                            <label for="tipoEstudio">Tipo de estudio</label>
+                                            @Html.DropDownList("tipoEstudio", ViewBag.TipoEstudios as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-3 col-md-12 col-12">
+                                            <label for="dependencia">Facultades/Posgrado</label>
+                                            @Html.DropDownList("dependencia", ViewBag.Dependencias as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-md-6 col-12">
+                                            <label for="esIngresante">Tipo de alumnos</label>
+                                            @Html.DropDownList("esIngresante", ViewBag.TipoAlumno as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-md-6 col-12">
+                                            <label for="sinObligaciones">A alumnos</label>
+                                            @Html.DropDownList("sinObligaciones", ViewBag.TieneObligacion as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-md-6 col-12">
+                                            <label for="soloAplicarExtmp">Acción</label>
+                                            @Html.DropDownList("soloAplicarExtmp", ViewBag.CondicionGeneracion as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-6">
+                                            <button id="btnGenerarOblig" type="button" class="btn btn-block btn-outline-primary mt-4">
+                                                <i class="fa fa-fw fa-cogs"></i> Ejecutar
+                                            </button>
+                                        </div>
+
+                                        <div class="form-group col-lg-2 col-6">
+                                            <button id="btnConsultaOblig" type="button" class="btn btn-block btn-outline-primary mt-4">
+                                                <i class="fa fa-fw fa-search-plus"></i> Consultar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card" id="generarObligMsj" style="margin-top: 5px;">
+                            @if (ViewBag.Success != null)
+                            {
+                                <div class="card-body">
+                                    @if (ViewBag.Success != null)
+                                    {
+                                        if (ViewBag.Success)
+                                        {
+                                            <p class="alert alert-success">@ViewBag.Message</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="alert alert-danger">@ViewBag.Message</p>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        <div class="table-responsive mt-4">
+                            <p class="h5">Obligaciones generadas</p>
+                            @Html.Grid(Model).Columns(columns =>
+                            {
+                                columns.Add(c => c.I_Anio).Titled("Año").Filterable(true);
+                                columns.Add(c => c.T_Periodo).Titled("Periodo").Filterable(true);
+                                columns.Add(c => c.C_CodAlu).Titled("Código alumno").Filterable(true);
+                                columns.Add(c => c.T_ApellidosNombres).Titled("Nombres y apellidos").Filterable(true);
+                                columns.Add(c => c.T_FacDesc).Titled("Facultad").Filterable(true);
+                                columns.Add(c => c.T_DenomProg).Titled("Especialidad").Filterable(true);
+                                columns.Add(c => c.T_ProcesoDesc).Titled("Cuota").Filterable(true);
+                                columns.Add(c => c.T_MontoOblig).Titled("Monto").Filterable(true).Css("text-right");
+                                columns.Add(c => c.T_FecVencto).Titled("Fec. Venc.").Filterable(true).Css("text-right");
+                                columns.Add(c => c.T_Pagado).Titled("Estado").Filterable(true).Css("text-center");
+                                columns.Add().SetWidth(200).Css("text-center").Encoded(false).Sanitized(false)
+                                    .RenderValueAs(model => model.I_ObligacionAluID == 0 ? "<a href=\"\" class=\"btn-eliminar-obl\" data-id=\"" + model.I_MatAluID.ToString() + "\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>" : "");
+                            }).WithPaging(12).Sortable(true).WithGridItemsCount("Registros encontrados").EmptyText("No se encontraron registros")
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="individial" role="tabpanel" aria-labelledby="individial-tab">
+                        <div class="card">
+                            <div class="card-body bg-light-gray">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-2 col-md-4 col-6">
+                                            <label for="cmbAnioIndividual">Año</label>
+                                            @Html.DropDownList("cmbAnioIndividual", ViewBag.Anios as SelectList, new { @class = "form-control form-control-sm" })
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4 col-6 ">
+                                            <label for="cmbPeriodoIndividual">Periodo</label>
+                                            @Html.DropDownList("cmbPeriodoIndividual", ViewBag.Periodos as SelectList, null, new { @class = "form-control form-control-sm text-uppercase" })
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-4 col-12">
+                                            <label for="txtCodAlumno">Código de alumno</label>
+                                            @Html.TextBox("txtCodAlumno", null, new { @class = "form-control form-control-sm" })
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-12 col-12">
+                                            <label for="cmbEspecialidad">Especialidad</label>
+                                            <select id="cmbEspecialidad" name="cmbEspecialidad" class="form-control form-control-sm text-uppercase"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-2 col-md-3 col-12">
+                                            <button type="button" id="btnConsultarObligacionAlumno" class="btn btn-block btn-outline-primary mt-4"><i class="fa fa-fw fa-search-plus"></i> Consultar</button>
+                                        </div>
+                                        <div class="form-group col-lg-2 col-md-3 col-12">
+                                            <button type="button" id="btnGenerarObligacionAlumno" class="btn btn-block btn-outline-primary mt-4"><i class="fa fa-fw fa-cogs"></i> Generar</button>
+                                        </div>
+                                        <div class="form-group col-lg-2 col-sm-3 col-12">
+                                            <button type="button" id="btnLimpiarConsultaObligaAlumno" class="btn btn-block btn-outline-danger mt-4"><i class="fa fa-fw fa-eraser"></i> Limpiar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top: 5px;">
+                            <div class="my-3 p-3 bg-body rounded shadow-sm" style="margin-bottom: 0px !important;">
+                                <div class="d-flex text-muted pt-3">
+                                    <div class="pb-3 mb-0 lh-sm border-bottom w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-gray-dark">Apellidos y nombres</strong>
+                                        </div>
+                                        <span class="d-block text-uppercase" id="nombresCompletosAlumno"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex text-muted pt-3">
+                                    <div class="pb-3 mb-0 lh-sm border-bottom w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-gray-dark">Documento</strong>
+                                        </div>
+                                        <span class="d-block" id="documentoIdentidadAlumno"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex text-muted pt-3">
+                                    <div class="pb-3 mb-0 lh-sm border-bottom w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-gray-dark">Modalidad de Ingreso</strong>
+                                        </div>
+                                        <span class="d-block text-uppercase" id="modalidadIngresoAlumno"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive mt-4" style="max-height: 250px">
+                            <p class="h5">Obligaciones (Conceptos de Pago)</p>
+
+                            <table class="table table-sm table-hover" id="tblDetalleObligaciones">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Concepto</th>
+                                        <th>Cuota pago</th>
+                                        <th></th>
+                                        <th>Monto</th>
+                                        <th>Fec. Vencimiento</th>
+                                        <th>Tipo</th>
+                                        <th>Estado</th>
+                                        <th>Nro Recibo</th>
+                                        <th>Fecha Pago</th>
+                                        <th>Lugar</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-responsive mt-4" style="max-height: 270px">
+                            <p class="h5">Cuotas a pagar en Banco</p>
+
+                            <table class="table table-sm table-hover" id="tblCuotasPago">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Cuota pago</th>
+                                        <th></th>
+                                        <th>Monto</th>
+                                        <th>Fec. Vencimiento</th>
+                                        <th>Banco</th>
+                                        <th>Cta.Cte.</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                        </div>
+
+                        <div class="table-responsive mt-4 mb-4 col-md-2" id="areaImpresion"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEspera" tabindex="-1" role="dialog" aria-labelledby="lblModalEspera" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lblModalEspera">Mensaje del sistema</h5>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex align-items-center">
+                    <strong></strong>
+                    <div class="spinner-border ml-auto text-primary" role="status" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const MESSAGE_TYPE = {
+            INFO: 'info',
+            SUCCESS: 'success',
+            WARNING: 'warning',
+            ERROR: 'error'
+        };
+
+        $("#frmGenerarOblig").on("change", "#tipoEstudio", function (e) {
+            let tipoEstudio = $(this).val();
+
+            CargarDependencias(tipoEstudio);
+        });
+
+        function CargarDependencias(tipoEstudio) {
+            let cmbDependencia = $('#dependencia');
+
+            let parametros = {
+                tipoEstudio: tipoEstudio
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: ('@Url.Action("GetFacultades", "Service", new { httproute = "ActionApi" })'),
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbDependencia.html('');
+                },
+                success: function (data) {
+                    if (data && data.length > 0) {
+                        let html = '<option value="">TODOS</option>';
+
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+                        });
+
+                        cmbDependencia.html(html);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+        $(document).on("click", "#individial-tab", function (e) {
+            LimpiarMensajeGenerarOblig();
+        });
+
+        $("#frmGenerarOblig").on("click", "#btnGenerarOblig", function (e) {
+            let sinObligaciones = $('#frmGenerarOblig #sinObligaciones').val();
+            let soloAplicarExtmp = $('#frmGenerarOblig #soloAplicarExtmp').val();
+
+            if (sinObligaciones === 'True' && soloAplicarExtmp === 'True') {
+                MostrarMensajeObligacionesPorAlumno('No se puede agregar matrícula extemporánea a alumnos sin obligaciones', MESSAGE_TYPE.ERROR);
+            } else {
+                let anio = $('#frmGenerarOblig #anio').find("option:selected").text();
+                let periodo = $('#frmGenerarOblig #periodo').find("option:selected").text();
+                let tipoEstudio = $('#frmGenerarOblig #tipoEstudio').find("option:selected").text();
+                let dependencia = $('#frmGenerarOblig #dependencia').find("option:selected").text();
+                let tipoAlumno = $('#frmGenerarOblig #esIngresante').find("option:selected").text();
+                let dirigidoAlumnos = $('#frmGenerarOblig #sinObligaciones').find("option:selected").text();
+                let accion = $('#frmGenerarOblig #soloAplicarExtmp').find("option:selected").text();
+
+                let htmlText = '<p class="text-left">Las opciones seleccionadas son:</p>';
+                htmlText += `<dl class="row text-left">`;
+                htmlText += `<dt class="col-sm-4">Acción</dt><dd class="col-sm-8 font-weight-bold">${accion}</dd>`;
+                htmlText += `<dt class="col-sm-4">Nivel</dt><dd class="col-sm-8">${tipoEstudio}</dd>`;
+                htmlText += `<dt class="col-sm-4">Periodo</dt><dd class="col-sm-8">${anio} - ${periodo}</dd>`;
+                htmlText += `<dt class="col-sm-4">Tipo alumno</dt><dd class="col-sm-8">${tipoAlumno}</dd>`;
+                htmlText += `<dt class="col-sm-4">Dependencia</dt><dd class="col-sm-8">${dependencia}</dd>`;
+                htmlText += `<dt class="col-sm-4">Dirigido a</dt><dd class="col-sm-8">Alumnos ${dirigidoAlumnos}</dd>`;
+                htmlText += '</dl>';
+
+                Swal.fire({
+                    title: '',
+                    html: htmlText,
+                    icon: MESSAGE_TYPE.WARNING,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, continuar.',
+                    cancelButtonText: 'No, cancelar.'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#modalEspera .modal-body strong').html('Generando obligaciones . . .');
+                        AbrirModalEsperaGeneracionOblig();
+                        LimpiarMensajeGenerarOblig();
+                        $("#frmGenerarOblig").prop("method", "POST");
+                        document.getElementById('frmGenerarOblig').submit()
+                    }
+                });
+            }
+        });
+
+        $("#frmGenerarOblig").on("click", "#btnConsultaOblig", function (e) {
+            $('#modalEspera .modal-body strong').html('Realizando consulta . . .');
+            AbrirModalEsperaGeneracionOblig();
+            LimpiarMensajeGenerarOblig();
+            $("#frmGenerarOblig").prop("method", "GET");
+            document.getElementById('frmGenerarOblig').submit()
+        });
+
+        function AbrirModalEsperaGeneracionOblig() {
+            $('#modalEspera').modal('show');
+        }
+
+        function LimpiarMensajeGenerarOblig() {
+            $("#generarObligMsj").html("");
+        }
+
+        $(document).on('click', '#btnConsultarObligacionAlumno', function () {
+            let anio = $('#cmbAnioIndividual').val();
+            let periodo = $('#cmbPeriodoIndividual').val();
+            let codAlu = $('#txtCodAlumno').val();
+            let especialidad = $('#cmbEspecialidad').val();
+
+            if (codAlu === null || codAlu.length !== 10) {
+                MostrarMensajeObligacionesPorAlumno('El campo Código de Alumno es requerido.', MESSAGE_TYPE.WARNING);
+            } else if (especialidad === null || especialidad.length === '') {
+                ObtenerEspecialidadesAlumno(codAlu);
+            } else {
+                BuscarObligacionesAlumno(anio, periodo, especialidad, codAlu, true);
+            }
+        });
+
+        $(document).on('keypress', '#txtCodAlumno', function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+
+                let codAlu = $('#txtCodAlumno').val();
+
+                if (codAlu === null || codAlu.length !== 10) {
+                    MostrarMensajeObligacionesPorAlumno('El campo Código de Alumno es requerido.', MESSAGE_TYPE.WARNING);
+                } else {
+                    ObtenerEspecialidadesAlumno(codAlu);
+                }
+
+            }
+        });
+
+        function MostrarMensajeObligacionesPorAlumno(errorMessage, messageType) {
+            Swal.fire({
+                title: '',
+                text: errorMessage,
+                icon: messageType,
+                timer: 6000
+            });
+        }
+
+        function ObtenerEspecialidadesAlumno(codAlu) {
+            let parametros = {
+                codAlu: codAlu
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ObtenerEspecialidadesAlumno", "Obligaciones")',
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    llenarComboEspecialidades(null);
+                    QuitarDatosAlumno();
+                    GenerarTablaDetalle(null);
+                    GenerarTablaCuotas(null);
+                    OcultarBotonImpresion();
+                },
+                success: function (data) {
+                    llenarComboEspecialidades(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    let jsonException = JSON.parse(xhr.responseText);
+                    MostrarMensajeObligacionesPorAlumno(jsonException.Message, MESSAGE_TYPE.ERROR);
+                }
+            });
+        }
+
+        function llenarComboEspecialidades(especialidades) {
+            let cmbEspecialidad = $('#cmbEspecialidad');
+
+            cmbEspecialidad.empty();
+
+            if (especialidades !== null) {
+                let html = '';
+
+                $.each(especialidades, function (i, item) {
+                    html += '<option value="' + item.C_RcCod + '">' + item.T_EspDesc + '</option>';
+
+                    if (i === 0) {
+                        let anio = $('#cmbAnioIndividual').val();
+                        let periodo = $('#cmbPeriodoIndividual').val();
+                        let codAlu = $('#txtCodAlumno').val();
+
+                        BuscarObligacionesAlumno(anio, periodo, item.C_RcCod, codAlu, true);
+                    }
+                });
+
+                cmbEspecialidad.html(html);
+            }
+        }
+
+        function BuscarObligacionesAlumno(anio, periodo, codRc, codAlu, preguntarGenerarObl) {
+            let parametros = {
+                anio: anio,
+                periodo: periodo,
+                codRc: codRc,
+                codAlu: codAlu
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("BuscarObligacionesAlumno", "Obligaciones")',
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    QuitarDatosAlumno();
+                    GenerarTablaDetalle(null);
+                    GenerarTablaCuotas(null);
+                    OcultarBotonImpresion();
+                },
+                success: function (data) {
+                    if (data) {
+                        if (data.alumno !== null) {
+                            MostrarDatosAlumno(data.alumno);
+                        }
+
+                        if (data.detalle_pago.length == 0) {
+                            if (preguntarGenerarObl) {
+                                Swal.fire({
+                                    title: '',
+                                    text: "El alumno no cuenta con obligaciones generadas para este periodo. ¿Desea generar las obligaciones en este momento?.",
+                                    icon: MESSAGE_TYPE.WARNING,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Si, continuar.',
+                                    cancelButtonText: 'No, cancelar.'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        GenerarObligacionesAlumno(anio, periodo, codRc, codAlu);
+                                    }
+                                });
+                            }
+                        } else {
+                            GenerarTablaDetalle(data.detalle_pago);
+                            GenerarTablaCuotas(data.cuotas_pago);
+                            GenerarBotonImpresion(anio, periodo, codRc, codAlu);
+                        }
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var jsonException = JSON.parse(xhr.responseText);
+                    MostrarMensajeObligacionesPorAlumno(jsonException.Message, MESSAGE_TYPE.ERROR);
+                }
+            });
+        }
+
+        function GenerarObligacionesAlumno(anio, periodo, codRc, codAlu) {
+            let parametros = {
+                anio: anio,
+                periodo: periodo,
+                codRc: codRc,
+                codAlu: codAlu
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GenerarObligacionesAlumno", "Obligaciones")',
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () { },
+                success: function (data) {
+                    if (data) {
+                        if (data.Value) {
+                            BuscarObligacionesAlumno(anio, periodo, codRc, codAlu, false);
+                        } else {
+                            MostrarMensajeObligacionesPorAlumno(data.Message, MESSAGE_TYPE.ERROR);
+                        }
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var jsonException = JSON.parse(xhr.responseText);
+                    MostrarMensajeObligacionesPorAlumno(jsonException.Message, MESSAGE_TYPE.ERROR);
+                }
+            });
+        }
+
+        function MostrarDatosAlumno(alumno) {
+            $('#nombresCompletosAlumno').html(alumno.T_ApePaterno + ' ' + alumno.T_ApeMaterno + ' ' + alumno.T_Nombre);
+            $('#documentoIdentidadAlumno').html(alumno.C_NumDNI);
+            $('#modalidadIngresoAlumno').html(alumno.T_ModIngDesc);
+        }
+
+        function QuitarDatosAlumno() {
+            $('#nombresCompletosAlumno').html('');
+            $('#documentoIdentidadAlumno').html('');
+            $('#modalidadIngresoAlumno').html('');
+        }
+
+        function GenerarTablaDetalle(detalle_pago) {
+            let tblDetalleObligaciones = $('#tblDetalleObligaciones').find('tbody');
+
+            tblDetalleObligaciones.html('');
+
+            if (detalle_pago !== null) {
+                let rows = '';
+
+                $.each(detalle_pago, function (i, item) {
+                    rows += '<tr>' +
+                        '<td>' + item.T_ConceptoDesc + '</td>' +
+                        '<td>' + item.T_ProcesoDesc + '</td>' +
+                        '<td>' + item.T_NroOrden + '</td>' +
+                        '<td>' + item.T_Monto + '</td>' +
+                        '<td>' + item.T_FecVencto + '</td>' +
+                        '<td>' + item.T_TipoObligacion + '</td>' +
+                        '<td>' + item.T_Pagado + '</td>' +
+                        '<td>' + item.T_NroRecibo + '</td>' +
+                        '<td>' + item.D_FecPago + '</td>' +
+                        '<td>' + item.T_LugarPago + '</td>' +
+                        '</tr>';
+                });
+
+                tblDetalleObligaciones.html(rows);
+            }
+        }
+
+        function GenerarTablaCuotas(cuotas_pago) {
+            let tblHeader = $('#tblCuotasPago').find('tr > th:nth-child(7)');
+
+            if (cuotas_pago !== null && cuotas_pago.length > 1) {
+                let habilitados = cuotas_pago.filter((v) => v.B_Pagado);
+
+                if (habilitados.length !== cuotas_pago.length) {
+                    tblHeader.html('<button type="button" class="btn btn-link" onclick="ConfirmarAnulacionGrupal();" style="padding: 0px;"><i class="fa fa-trash"></i> Anular seleccionados</button>');
+                }
+            } else {
+                tblHeader.html('');
+            }
+
+            let tblCuotasPago = $('#tblCuotasPago').find('tbody');
+            let rows = '';
+
+            tblCuotasPago.html('');
+
+            $.each(cuotas_pago, function (i, item) {
+                let paramCuota = item.T_ProcesoDesc + ' (' + item.T_NroOrden + ')';
+                let paramMonto = item.T_MontoOblig;
+                let paramFecVcto = item.T_FecVencto;
+                let paramObligacionID = item.I_ObligacionAluID;
+                let chkAnular = '<input type="checkbox" name="chkAnularObl" value="' + item.I_ObligacionAluID + '" />';
+                let btnAnular = '<button type="button" class="btn btn-link" onclick="ConfirmarAnulacionIndividual(\'' +
+                    paramCuota + '\', \'' + paramMonto + '\', \'' + paramFecVcto + '\', ' + paramObligacionID + ')"><i class="fa fa-trash"></i> Anular</button>';
+
+                rows += '<tr>' +
+                    '<td>' + item.T_ProcesoDesc + '</td>' +
+                    '<td>' + item.T_NroOrden + '</td>' +
+                    '<td>' + item.T_MontoOblig + '</td>' +
+                    '<td>' + item.T_FecVencto + '</td>' +
+                    '<td>' + item.T_Banco + '</td>' +
+                    '<td>' + item.T_CtaDeposito + '</td>' +
+                    // No más comprobación de estado de pago
+                    '<td>' + btnAnular + ' ' + chkAnular + '</td>' +
+                    '</tr>';
+            });
+
+            tblCuotasPago.html(rows);
+        }
+
+        function GenerarBotonImpresion(anio, periodo, codRc, codAlu) {
+            let printDiv = $('#areaImpresion');
+
+            let parametros = "?anio=" + anio + "&periodo=" + periodo + "&codalu=" + codAlu + "&codrc=" + codRc;
+
+            let btnImprimir = '<a href="@Url.Action("ReporteObligaciones", "Reportes")' + parametros + '" target="_blank" id="btnImprimirConstancia" class="btn btn-block btn-primary">' +
+                '<i class="fa fa-fw fa-search-plus"></i> Imprimir</a>';
+
+            let btnAmplirCreditos = '<a href="@Url.Action("AmpliarCreditos", "Obligaciones")' + parametros + '" class="btn btn-block btn-primary modal-link-lg"><i class="fa fa-fw fa-plus"></i> Ampliación de créditos</a>';
+
+            printDiv.html(btnImprimir + btnAmplirCreditos);
+        }
+
+        function OcultarBotonImpresion() {
+            $('#areaImpresion').html('');
+        }
+
+        $(document).on('click', '#btnLimpiarConsultaObligaAlumno', function (e) {
+            $('#txtCodAlumno').val('');
+            llenarComboEspecialidades(null);
+            QuitarDatosAlumno();
+            GenerarTablaDetalle(null);
+            GenerarTablaCuotas(null);
+        });
+
+        function ConfirmarAnulacionIndividual(cuota, monto, fechVcto, obligacionID) {
+            Swal.fire({
+                title: '',
+                html: "¿Desea anular la cuota <b>" + cuota + "</b> de <b>S/" + monto + "</b> con fecha de vencimiento <b>" + fechVcto + "</b>?.",
+                icon: MESSAGE_TYPE.WARNING,
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, continuar.',
+                cancelButtonText: 'No, cancelar.'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let obligaciones = [obligacionID];
+
+                    AnularObligacion(obligaciones);
+                }
+            });
+        }
+
+        function ConfirmarAnulacionGrupal() {
+            let obligaciones = [];
+
+            $("input:checkbox[name=chkAnularObl]:checked").each(function () {
+                obligaciones.push(this.value);
+            });
+
+            if (obligaciones.length > 0) {
+                Swal.fire({
+                    title: '',
+                    html: "¿Desea anular las cuotas seleccionadas?.",
+                    icon: MESSAGE_TYPE.WARNING,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, continuar.',
+                    cancelButtonText: 'No, cancelar.'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        AnularObligacion(obligaciones);
+                    }
+                });
+            } else {
+                MostrarMensajeObligacionesPorAlumno("Debe seleccionar al menos una cuota de pago.", MESSAGE_TYPE.ERROR);
+            }
+        }
+
+        function AnularObligacion(obligaciones) {
+            if (obligaciones === null || obligaciones.length === 0) {
+                MostrarMensajeObligacionesPorAlumno("Debe seleccionar al menos una cuota de pago.", MESSAGE_TYPE.ERROR);
+            } else {
+                let parametros = {
+                    obligaciones: obligaciones
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("AnularCuotaPago", "Obligaciones")',
+                    data: parametros,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $('#modalEspera .modal-body strong').html('Espere un momento . . .');
+                        AbrirModalEsperaGeneracionOblig();
+                    },
+                    success: function (data) {
+                        if (data) {
+                            if (data.Value) {
+                                MostrarMensajeObligacionesPorAlumno(data.Message, MESSAGE_TYPE.SUCCESS);
+
+                                let anio = $('#cmbAnioIndividual').val();
+                                let periodo = $('#cmbPeriodoIndividual').val();
+                                let codAlu = $('#txtCodAlumno').val();
+                                let codRc = $('#cmbEspecialidad').val();
+
+                                BuscarObligacionesAlumno(anio, periodo, codRc, codAlu, false);
+                            } else {
+                                MostrarMensajeObligacionesPorAlumno(data.Message, MESSAGE_TYPE.ERROR);
+                            }
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var jsonException = JSON.parse(xhr.responseText);
+                        MostrarMensajeObligacionesPorAlumno(jsonException.Message, MESSAGE_TYPE.ERROR);
+                    },
+                    complete: function () {
+                        $('#modalEspera').modal('hide');
+                    }
+                });
+            }
+        }
+
+        $(document).on('click', '#btnGenerarObligacionAlumno', function (e) {
+            let anio = $('#cmbAnioIndividual').val();
+            let periodo = $('#cmbPeriodoIndividual').val();
+            let codAlu = $('#txtCodAlumno').val();
+            let codRc = $('#cmbEspecialidad').val();
+
+            if (codAlu !== null && codAlu.length === 10) {
+                if (codRc !== null && codRc.length === 3) {
+                    GenerarObligacionesAlumno(anio, periodo, codRc, codAlu);
+                } else {
+                    MostrarMensajeObligacionesPorAlumno("Realicé la consulta para obtener la(s) especialidad(es) del alumno.", MESSAGE_TYPE.WARNING);
+                }
+            } else {
+                MostrarMensajeObligacionesPorAlumno("El Código de Alumno es obligatorio.", MESSAGE_TYPE.WARNING);
+            }
+        });
+
+        $(document).on('click', '.btn-eliminar-obl', function (event) {
+            event.preventDefault();
+
+            let id = $(this).data("id");
+            let token = $('input[name="__RequestVerificationToken"]').val();
+
+            Swal.fire({
+                title: '',
+                text: '¿Desea eliminar este registro?',
+                icon: MESSAGE_TYPE.WARNING,
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, continuar.',
+                cancelButtonText: 'No, cancelar.'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("EliminarMatricula", "Obligaciones")/' + id,
+                        type: "POST",
+                        data: { __RequestVerificationToken: token },
+                        beforeSend: function () {
+                        },
+                        success: function (data) {
+                            if (data.Value) {
+                                Swal.fire({
+                                    title: '',
+                                    html: data.Message,
+                                    icon: MESSAGE_TYPE.SUCCESS,
+                                    confirmButtonColor: '#3085d6',
+                                    confirmButtonText: 'Ok'
+                                }).then((result) => {
+                                    if (result.isConfirmed || result.dismiss === Swal.DismissReason.esc) {
+                                        location.reload();
+                                    }
+                                });
+                            } else {
+                                MostrarMensajeObligacionesPorAlumno(data.Message, MESSAGE_TYPE.ERROR);
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+

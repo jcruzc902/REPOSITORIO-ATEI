@@ -1,0 +1,439 @@
+﻿@model WebApp.ViewModels.ConsultaObligacionEstudianteViewModel
+@using GridMvc.Html
+@Scripts.Render("~/bundles/jqueryval")
+
+<style>
+    .input-daterange {
+        display: flex !important;
+    }
+
+    @@media (max-width: 768px) {
+        .input-daterange {
+            display: block !important;
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-search">&nbsp;</i>Consultas </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa bi-person-lines-fill">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>
+        </section>
+    </div>
+    <br />
+
+    <div class="col-12 mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body bg-light-gray">
+                        <form name="frmConsultaEstudianteMatricula" id="frmConsultaEstudianteMatricula" method="get" action="@Url.Action("Consulta", "Estudiantes")">
+                            <div class="form-row">
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="anio">Año</label>
+                                    @Html.DropDownListFor(model => model.anio, ViewBag.Anios as SelectList, "TODOS", new { @class = "form-control form-control-sm" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="periodo">Periodo</label>
+                                    @Html.DropDownListFor(model => model.periodo, ViewBag.Periodos as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="tipoEstudio">Tipo de estudio</label>
+                                    @Html.DropDownListFor(model => model.tipoEstudio, ViewBag.TipoEstudios as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="esIngresante">Tipo de alumno</label>
+                                    @Html.DropDownListFor(model => model.esIngresante, ViewBag.TipoAlumno as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="obligacionGenerada">Obligaciones</label>
+                                    @Html.DropDownListFor(model => model.obligacionGenerada, ViewBag.ExistenciaObligaciones as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="estaPagado">Estado de pago</label>
+                                    @Html.DropDownListFor(model => model.estaPagado, ViewBag.EstadoPagoObligaciones as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-4 col-md-6 col-12">
+                                    <label for="codFac">Dependencia</label>
+                                    @Html.DropDownListFor(model => model.codFac, ViewBag.Dependencias as SelectList, (string)ViewBag.FiltroDependencias, new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-4 col-md-6 col-12">
+                                    <label for="codEsc">Escuela</label>
+                                    @Html.DropDownListFor(model => model.codEsc, ViewBag.Escuelas as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-4 col-12">
+                                    <label for="codRc">Especialidad</label>
+                                    @Html.DropDownListFor(model => model.codRc, ViewBag.Especialidades as SelectList, "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-3 col-6">
+                                    <label for="codAlumno">Cod. alumno</label>
+                                    @Html.TextBoxFor(model => model.codAlumno, new { @class = "form-control form-control-sm" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-3 col-6">
+                                    <label for="nomAlumno">Nombre alumno</label>
+                                    @Html.TextBoxFor(model => model.nomAlumno, new { @class = "form-control form-control-sm" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-3 col-6">
+                                    <label for="apePaternoAlumno">Apellido paterno</label>
+                                    @Html.TextBoxFor(model => model.apePaternoAlumno, new { @class = "form-control form-control-sm" })
+                                </div>
+
+                                <div class="form-group col-lg-2 col-md-3 col-6">
+                                    <label for="apeMaternoAlumno">Apellido materno</label>
+                                    @Html.TextBoxFor(model => model.apeMaternoAlumno, new { @class = "form-control form-control-sm" })
+                                </div>
+
+                                <div class="form-group col-lg-4 col-12">
+                                    <div id="datepicker">
+                                        <div class="input-daterange">
+                                            <div class="form-group col-md-6 col-12" style="padding-left: 0px;">
+                                                <label for="fechaDesde">Pagos desde</label>
+                                                <div class="input-group">
+                                                    @Html.TextBoxFor(model => model.fechaDesde, "{0:dd/MM/yyyy}",
+                                                        new { @class = "form-control form-control-sm", @placeholder = "Fecha inicio", @readonly = "readonly" })
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6 col-12" style="padding-left: 0px;">
+                                                <label for="fechaHasta">Pagos hasta</label>
+                                                <div class="input-group">
+                                                    @Html.TextBoxFor(model => model.fechaHasta, "{0:dd/MM/yyyy}",
+                                                        new { @class = "form-control form-control-sm", @placeholder = "Fecha final", @readonly = "readonly" })
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-6">
+                                    <button type="submit" id="btnConsultarEstudiante" class="btn btn-block btn-outline-primary mt-4"><i class="fa fa-fw fa-search-plus"></i> Iniciar consulta</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <p class="h5">Relación de estudiantes registrados en el sistema</p>
+                    @if (Model.resultado != null && Model.resultado.Count() > 0)
+                    {
+
+                        <!--SE AGREGO PARA EL BOTON LISTAR TODAS OBLIGACIONES-->
+                        // Validamos si se filtró un único alumno
+                        <div class="d-flex align-items-center mb-2">
+                            <button type="button" id="btnExcelDownload" class="btn btn-link pl-0">
+                                Descargar información en Excel [.xlsx]
+                            </button>
+
+                            <span class="mx-2 text-muted">|</span>
+                            @* SOLO visible si se filtró por un código de alumno *@
+                            @if (!string.IsNullOrWhiteSpace(Model.codAlumno))
+                            {
+                                <button type="button" id="btnTodasObligaciones" class="btn btn-link">
+                                    Todas las obligaciones
+                                </button>
+                            }
+                        </div>
+                        <!--ANTES SOLO : <button type="button" id="btnExcelDownload" class="btn btn-link pl-0">Descargar información en Excel [.xlsx]</button> -->
+                        <!--SE AGREGO PARA EL BOTON LISTAR TODAS OBLIGACIONES-->
+                    }
+
+                    @Html.Grid(Model.resultado).Columns(columns =>
+                    {
+                   columns.Add(c => c.I_Anio).Titled("Año");
+                   columns.Add(c => c.T_Periodo).Titled("Periodo");
+                   columns.Add(c => c.C_CodAlu).Titled("Código alumno");
+                   columns.Add(c => c.T_ApellidosNombres).Titled("Apellidos y nombres");
+                   columns.Add(c => c.T_DenomProg).Titled("Especialidad").Filterable(true);
+                   columns.Add(c => c.T_EsIngresante).Titled("Tipo alumno").Filterable(true);
+                   columns.Add().Titled("Cuota").Encoded(false).Sanitized(false).RenderValueAs(model =>
+                      ViewBag.MostrarReporteObligaciones ? ("<a href=\"" + Url.Action("ReporteObligaciones", "Reportes", new { anio = model.I_Anio, periodo = model.I_Periodo, codalu = model.C_CodAlu, codrc = model.C_RcCod }) +
+                      "\" target=\"_blank\">" + model.T_ProcesoDesc + "</a>") : model.T_ProcesoDesc).Filterable(true);
+                   columns.Add(c => c.I_MontoOblig).Titled("Monto Obl.").Filterable(true).Css("text-center");
+                   columns.Add(c => c.T_FecVencto).Titled("Fec.Vcto.").Filterable(true).Css("text-center");
+                   columns.Add(c => c.T_MontoPagos).Titled("Pagado actual").Filterable(true).Css("text-center");
+                   columns.Add(c => c.T_FecPagos).Titled("Fec.Pago").Filterable(true).Css("text-center");
+                   columns.Add().Titled("Estado").Encoded(false).Sanitized(false).RenderValueAs(model =>
+                       model.B_Pagado.HasValue ? ("<a href=\"" + Url.Action("VerPagosObligacion", "Pagos", new { obligacionID = model.I_ObligacionAluID, soloLectura = true }) +
+                       "\" class=\"modal-link-lg\"> " + (model.B_Pagado.Value ? "Pagado" : "Pendiente") + "</a>") : "");
+               }).WithPaging(12).Sortable(true).WithGridItemsCount("Registros encontrados").EmptyText("No se encontraron registros")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SE AGREGO PARA EL BOTON LISTAR TODAS OBLIGACIONES-->
+<!--SE AGREGO PARA EL BOTON LISTAR TODAS OBLIGACIONES-->
+
+
+@section Scripts {
+    <script>
+        $('#datepicker .input-daterange').datepicker({
+            todayBtn: 'linked',
+            language: 'es',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            weekStart: 0,
+            clearBtn: true
+        }).on('hide', function (e) {
+            e.stopPropagation();
+        });
+
+        $('#datepicker .input-daterange #fechaDesde').datepicker('update', "@Model.fechaDesde");
+        $('#datepicker .input-daterange #fechaHasta').datepicker('update', "@Model.fechaHasta");
+
+        $("#frmConsultaEstudianteMatricula").on("change", "#tipoEstudio", function (e) {
+            let tipoEstudio = $(this).val();
+
+            CargarDependencias(tipoEstudio);
+        });
+
+        $("#frmConsultaEstudianteMatricula").on("change", "#codFac", function (e) {
+            let tipoEstudio = $("#tipoEstudio").val();
+            let codFac = $(this).val();
+
+            CargarEscuelas(tipoEstudio, codFac);
+        });
+
+        $("#frmConsultaEstudianteMatricula").on("change", "#codEsc", function (e) {
+            let tipoEstudio = $("#tipoEstudio").val();
+            let codFac = $("#codFac").val();
+            let codEsc = $(this).val();
+
+            CargarEspecialidades(tipoEstudio, codFac, codEsc);
+        });
+
+        $(document).on("click", "#btnConsultarEstudiante", function (e) {
+            document.forms.frmConsultaEstudianteMatricula.action = "@Url.Action("Consulta", "Estudiantes")";
+            document.forms.frmConsultaEstudianteMatricula.submit();
+        });
+
+        $(document).on("click", "#btnExcelDownload", function (e) {
+            document.forms.frmConsultaEstudianteMatricula.action = "@Url.Action("DescargaConsulta", "Estudiantes")";
+            document.forms.frmConsultaEstudianteMatricula.submit();
+        });
+
+        $(document).on("click", ".modal-header .closeModal", function (e) {
+            window.location.reload();
+        });
+
+        $(document).on("click", ".modal-footer .closeModal", function (e) {
+            window.location.reload();
+        });
+
+
+
+        $(document).on("click", "#btnTodasObligaciones", function (e) {
+            e.preventDefault(); var cod = ($("#codAlumno").val() || "").trim();
+            if (!cod)
+            {
+                alert("Para usar 'Todas las obligaciones' escribe un Código de alumno."); $("#codAlumno").focus();
+                return;
+            }
+
+            //url de generar  todas las obligaciones
+            var url = "@Url.Content("~/obligaciones/reporte-todas-por-alumno")" + "?codalu=" + encodeURIComponent(cod);
+            // Dispara la descarga en la MISMA pestaña, sin abrir otra
+            window.location.href = url;
+        });
+
+        $(document).on("click", "#btnAbrirTodas", function () {
+            $("#modalTodasObligaciones .modal-body a[target='_blank']").each(function () {
+                window.open(this.href, "_blank");
+            });
+        });
+         //*SE AGREGO PARA EL BOTON LISTAR TODAS OBLIGACIONES
+
+        function CargarDependencias(tipoEstudio) {
+            let cmbDependencia = $('#codFac');
+            let cmbEscuelas = $('#codEsc');
+            let cmbEspecialidades = $('#codRc');
+
+            let parametros = {
+                tipoEstudio: tipoEstudio
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: ('@Url.Action("GetDependencias", "Service", new { httproute = "ActionApi" })'),
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbDependencia.html('');
+                    cmbEscuelas.html('');
+                    cmbEspecialidades.html('');
+                },
+                success: function (data) {
+                    if (data) {
+                        if (data.length > 0) {
+                            let html = (data.length == 1) ? '' : '<option value="">TODOS</option>';
+
+                            $.each(data, function (i, item) {
+                                html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+
+                                if (i == 0) {
+                                    CargarEscuelas(tipoEstudio, data.length == 1 ? item.Value : null);
+                                }
+                            });
+
+                            cmbDependencia.html(html);
+                        } else {
+                            cmbDependencia.html('<option value="">TODOS</option>');
+                            cmbEscuelas.html('<option value="">TODOS</option>');
+                            cmbEspecialidades.html('<option value="">TODOS</option>');
+                        }
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+        function CargarEscuelas(tipoEstudio, codFac) {
+            let cmbEscuelas = $('#codEsc');
+            let cmbEspecialidades = $('#codRc');
+
+            let parametros = {
+                tipoEstudio: tipoEstudio,
+                codFac: codFac
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: ('@Url.Action("GetEscuelas", "Service", new { httproute = "ActionApi" })'),
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbEscuelas.html('');
+                    cmbEspecialidades.html('');
+                },
+                success: function (data) {
+                    if (data) {
+                        if (data.length > 0) {
+                            let html = (data.length == 1) ? '' : '<option value="">TODOS</option>';
+
+                            $.each(data, function (i, item) {
+                                html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+
+                                if (i == 0) {
+                                    CargarEspecialidades(tipoEstudio, codFac, data.length == 1 ? item.Value : null);
+                                }
+                            });
+
+                            cmbEscuelas.html(html);
+                        } else {
+                            cmbEscuelas.html('<option value="">TODOS</option>');
+                            cmbEspecialidades.html('<option value="">TODOS</option>');
+                        }
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+        function CargarEspecialidades(tipoEstudio, codFac, codEsc) {
+            let cmbEspecialidad = $('#codRc');
+
+            let parametros = {
+                tipoEstudio: tipoEstudio,
+                codFac: codFac,
+                codEsc: codEsc
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: ('@Url.Action("GetEspecialidades", "Service", new { httproute = "ActionApi" })'),
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbEspecialidad.html('');
+                },
+                success: function (data) {
+                    if (data) {
+                        let html = (data.length == 1) ? '' : '<option value="">TODOS</option>';
+
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+                        });
+
+                        cmbEspecialidad.html(html);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+
+        //se agrego esto para fusionar los reportes pdf en uno solo//
+
+        function toggleTodasObligaciones() { const cod = ($("#codAlumno").val() || "").trim(); $("#btnTodasObligaciones").prop("disabled", cod.length === 0); }
+
+        $(function () {
+            $('#datepicker .input-daterange').datepicker({
+                todayBtn: 'linked',
+                language: 'es',
+                format: 'dd/mm/yyyy',
+                autoclose: true,
+                weekStart: 0,
+                clearBtn: true
+            }).on('hide', function (e) { e.stopPropagation(); });
+            $('#datepicker .input-daterange #fechaDesde').datepicker('update', "@Model.fechaDesde");
+            $('#datepicker .input-daterange #fechaHasta').datepicker('update', "@Model.fechaHasta");
+
+         
+
+           // habilita el botón al escribir un código
+            toggleTodasObligaciones();
+            $("#codAlumno").on("input change", toggleTodasObligaciones);
+
+
+              // Abrir PDF unificado
+            $(document).on("click", "#btnTodasObligaciones", function () {
+                var cod = ($("#codAlumno").val() || "").trim();
+                if (!cod) {
+                    alert("Para usar 'Todas las obligaciones' escribe un Código de alumno.");
+                    $("#codAlumno").focus();
+                    return;
+                }
+
+
+                 // Usa la ruta por atributo : [Route("obligaciones/reporte-todas-por-alumno")])
+                var url = "@Url.Content("~/obligaciones/reporte-todas-por-alumno")" + "?codalu=" + encodeURIComponent(cod);
+                try {
+                    var w = window.open(url, "_blank");
+                    if (!w || w.closed || typeof w.closed === "undefined") {
+                        window.location.href = url; // fallback si popup bloqueado
+                    }
+                } catch (e) {
+                    window.location.href = url;
+                }
+            });
+                  
+        });
+    </script>
+}

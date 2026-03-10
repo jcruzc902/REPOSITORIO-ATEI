@@ -1,0 +1,98 @@
+﻿
+
+@Scripts.Render("~/bundles/jqueryval")
+
+<div class="modal-header bg-dark-gray" style="border-radius: .2rem .2rem 0px 0px">
+    <h5 class="modal-title text-center"><i class="fa bi-box-arrow-right">&nbsp;</i> @ViewBag.Title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div class="container-fluid mt-2">
+        <fieldset class="mb-3" id="frm_busqueda">
+            <legend class="h5 border-bottom">Búsqueda de pagos</legend>
+            <form id="frm-pago-search">
+                <div class="form-row">
+                    <div class="form-group col-md-7">
+                        @Html.Label("Entidad recaudadora", new { @class = "control-label", @for = "entidadRecaudadora" })
+                        @Html.DropDownList("entidadRecaudadora", ViewBag.EntidadRecaudadora as SelectList, "[ SELECIONAR ]", new { @class = "form-control" })
+                    </div>
+                    <div class="form-group col-md-5">
+                        @Html.Label("Referencia de pago", new { @class = "control-label", @for = "referenciaPago" })
+                        @Html.TextBox("referenciaPago", null, new { @type = "search", @class = "form-control text-uppercase" })
+                    </div>
+                    <div class="form-group col-12 pt-3 text-center">
+                        <button class="btn btn-info px-5" type="submit" id="btn-pago-search">
+                            <span id="icon_loading" class="spinner-border spinner-border-sm" style="display:none;" role="status" aria-hidden="true"></span>
+                            <i id="icon_search" class="fa fa-search">&nbsp;</i><span id="txt_msg">Buscar</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+
+        <div id="busqueda_pago">
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('#frm-pago-search').on('submit', function (event) {
+        event.preventDefault();
+        const entidadId = $('#entidadRecaudadora').val();
+        const codreferencia = $('#referenciaPago').val();
+
+        toastr.options.positionClass = 'toast-top-center';
+
+        if (entidadId == '') {
+            Swal.fire({
+                text: 'seleccione la entidad recaudadora',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
+
+            $('#EntidadRecaudadora').focus();
+            return false;
+        }
+        if (codreferencia == '') {
+            Swal.fire({
+                text: 'Ingrese el código de referencia o liquidación del pago',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
+
+            $('#ReferenciaPago').select();
+            return false;
+        }
+
+        $.ajax({
+            url: '@Url.Action("BuscarPagoDevolucion", "Devoluciones")' + '?entidadId=' + entidadId + '&codreferencia=' + codreferencia,
+            type: 'GET',
+            cache: false,
+            beforeSend: function () {
+                $('#busqueda_pago').hide();
+                $('#txt_msg').text('Buscando...');
+                $('#icon_search').hide();
+                $('#icon_loading').show();
+            },
+            success: function (data) {
+                $('#referenciaPago').text('');
+                $('#frm_busqueda').hide();
+                $('.modal.show .modal-dialog').addClass('modal-lg');
+                $('#busqueda_pago').html(data);
+                $('#busqueda_pago').show();
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                toastr.options.positionClass = 'toast-bottom-right';
+                toastr.error(jqXHR.responseText);
+            },
+            complete: function () {
+                $('#icon_loading').hide();
+                $('#icon_search').show();
+                $('#txt_msg').text('Buscar');
+            }
+        });
+    })
+</script>

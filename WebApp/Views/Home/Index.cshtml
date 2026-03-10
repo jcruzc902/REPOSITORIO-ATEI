@@ -1,0 +1,605 @@
+﻿@model WebApp.ViewModels.DashboardViewModel
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+      href="../../Assets/plantilla/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+
+
+@{
+    if (Session["mensaje"] != null)
+    {
+        <script>
+        Swal.fire({
+            position: 'top-end',
+            icon: '@Session["icono"]',
+            title: '@Session["mensaje"]',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        </script>
+    }
+
+    Session.Remove("mensaje");
+    Session.Remove("icono");
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <section class="content-header">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                        <li class="breadcrumb-item active">
+                            <span><i class="fa fa-home"></i> Inicio</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h2><b>Panel principal del Sistema</b></h2>
+            </section>
+        </div>
+    </div>
+
+
+
+    <div>
+
+        <div class="row" id="tarjetas_acceso_rapido">
+
+
+
+            <div class="col-md-3">
+
+                <div class="card mb-3">
+
+                    <div class="card-body" style="background-color:gainsboro;color:black;">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+                                <h1 style="font-size:45px;"><b>@Model.PagosObligaciones.ToString("N0")</b></h1>
+                                <p style="font-size:18px;"><b>Obligaciones Registrados</b></p>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-money" style="font-size:80px;color:black;"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a href="@Url.Action("ConsultaGeneracionObligaciones", "Obligaciones")" class="card-footer text-center" style="background-color: midnightblue; color: white; font-size: 18px; padding: 2px; ">
+                        Más detalle <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card mb-3">
+
+                    <div class="card-body" style="background-color:gainsboro;color:black;">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+                                <h1 style="font-size:45px;"><b>@Model.PagosTasas.ToString("N0")</b></h1>
+                                <p style="font-size:18px;"><b>Tasas Registrados</b></p>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-file-text" style="font-size:80px;color:black;"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a href="@Url.Action("ConsultaPagoTasa", "Tasa")" class="card-footer text-center" style="background-color: midnightblue; color: white; font-size: 18px; padding: 2px; ">
+                        Más detalle <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card mb-3">
+
+                    <div class="card-body" style="background-color:gainsboro;color:black;">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+                                <h1 style="font-size:45px;"><b>@Model.Alumnos.ToString("N0")</b></h1>
+                                <p style="font-size:18px;"><b>Alumnos Registrados</b></p>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-address-book" style="font-size:80px;color:black;"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a href="@Url.Action("Consulta", "Estudiantes")" class="card-footer text-center" style="background-color: midnightblue; color: white; font-size: 18px; padding: 2px; ">
+                        Más detalle <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card mb-3">
+
+                    <div class="card-body" style="background-color:gainsboro;color:black;">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div>
+                                <h1 style="font-size:45px;"><b>@Model.Dependencias.ToString("N0")</b></h1>
+                                <p style="font-size:18px;"><b>Dependencias Registrados</b></p>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-building" style="font-size:80px;color:black;"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <a href="@Url.Action("Index", "Dependencia")" class="card-footer text-center" style="background-color: midnightblue; color: white; font-size: 18px; padding: 2px; ">
+                        Más detalle <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br />
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../../Assets/images/logo_casa_estudios.png"
+                         style="width:100%; height:250px;"
+                         alt="slide">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+    @{
+        string rol_usuario = "";
+
+        if (Session["RolUsuario"] != null)
+        {
+            rol_usuario = Session["RolUsuario"].ToString();
+        }
+
+        if (rol_usuario == "Administrador" || rol_usuario == "Tesorería Avanzado")
+        {
+            <script>
+                document.getElementById('tarjetas_acceso_rapido').style.display = 'flex';
+            </script>
+        }
+        else
+        {
+            <script>
+                document.getElementById('tarjetas_acceso_rapido').style.display = 'none';
+            </script>
+        }
+    }
+
+
+
+    <div class="row">
+
+        @{
+            int year_current = DateTime.Now.Year;
+        }
+
+        <div class="col-md-6" id="chart_importe_obligaciones">
+            <div class="card card-dark shadow-lg" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
+
+                <div class="card-header d-flex align-items-center"
+                     style="background-color:black; padding:10px; position:relative;">
+                    <h5 class="card-title" style="color:white; margin:0;">
+                        Estadística de Importe Total de Pago de Obligaciones Mensual (S/.)
+                    </h5>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                            <i class="fas fa-expand" hidden></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="col-md-2" style="margin-left: 50px;">
+                        <label>Selecciona período</label>
+                        <select id="periodo" class="form-control" style="width: 100%;" onchange="drawVisualization();">
+                            @for (int i = 2000; i <= 2050; i++)
+                            {
+                                if (i == year_current)
+                                {
+                                    <option value="@i" selected>@i</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div id="chart_div" style="width: 100%; height: 350px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.setOnLoadCallback(drawVisualization);
+
+                        function errorHandler(errorMessage) {
+                            console.log(errorMessage);
+                            google.visualization.errors.removeError(errorMessage.id);
+                        }
+
+                        function drawVisualization() {
+                            var periodo = $("#periodo").val();
+
+                            $.ajax({
+                                url: '@Url.Action("ObtenerGraficoObligacionesMonto", "Home")',
+                                type: 'GET',
+                                data: { periodo: periodo },
+                                dataType: 'json',
+                                success: function (obj) {
+                                    var data = google.visualization.arrayToDataTable(obj);
+
+                                    var options = {
+                                        title: 'REPORTE DE PAGO DE OBLIGACIONES - PERIODO ' + periodo,
+                                        vAxis: { title: 'Monto' },
+                                        hAxis: { title: 'Meses' },
+                                        seriesType: 'bars',
+                                        colors: ['#21BF35'],
+                                        series: { 5: { type: 'line' } }
+                                    };
+
+                                    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+                                    google.visualization.events.addListener(chart, 'error', errorHandler);
+                                    chart.draw(data, options);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.log("Error al cargar gráfico: " + error);
+                                }
+                            });
+                        }
+
+                        $(document).ready(function () {
+                            $(window).resize(function () {
+                                drawVisualization();
+                            });
+                        });
+        </script>
+
+
+        <div class="col-md-6" id="chart_cantidad_obligaciones">
+            <div class="card card-dark shadow-lg" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
+
+                <div class="card-header d-flex align-items-center"
+                     style="background-color:black; padding:10px; position:relative;">
+                    <h5 class="card-title" style="color:white; margin:0;">
+                        Estadística de Cantidad de Pago de Obligaciones Mensual (S/.)
+                    </h5>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                            <i class="fas fa-expand" hidden></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="col-md-2" style="margin-left: 50px;">
+                        <label>Selecciona período</label>
+                        <select id="periodo2" class="form-control" style="width: 100%;" onchange="drawVisualization2();">
+                            @for (int i = 2000; i <= 2050; i++)
+                            {
+                                if (i == year_current)
+                                {
+                                    <option value="@i" selected>@i</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div id="chart_div2" style="width: 100%; height: 350px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+                    google.charts.load('current', { 'packages': ['corechart'] });
+                    google.charts.setOnLoadCallback(drawVisualization2);
+
+                    function errorHandler(errorMessage) {
+                        console.log(errorMessage);
+                        google.visualization.errors.removeError(errorMessage.id);
+                    }
+
+                    function drawVisualization2() {
+                        var periodo2 = $("#periodo2").val();
+
+                        $.ajax({
+                            url: '@Url.Action("ObtenerGraficoObligacionesCantidad", "Home")',
+                            type: 'GET',
+                            data: { periodo2: periodo2 },
+                            dataType: 'json',
+                            success: function (obj) {
+                                var data = google.visualization.arrayToDataTable(obj);
+
+                                var options = {
+                                    title: 'REPORTE DE PAGO DE OBLIGACIONES - PERIODO ' + periodo2,
+                                    vAxis: { title: 'Cantidad' },
+                                    hAxis: { title: 'Meses' },
+                                    //seriesType: 'bars',
+                                    colors: ['#17AAFF'],
+                                    series: { 5: { type: 'line' } }
+                                };
+
+                                var chart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+                                google.visualization.events.addListener(chart, 'error', errorHandler);
+                                chart.draw(data, options);
+                            },
+                            error: function (xhr, status, error) {
+                                console.log("Error al cargar gráfico: " + error);
+                            }
+                        });
+                    }
+
+                    $(document).ready(function () {
+                        $(window).resize(function () {
+                            drawVisualization2();
+                        });
+                    });
+        </script>
+
+    </div>
+
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-6" id="chart_importe_tasas">
+            <div class="card card-dark shadow-lg" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
+
+                <div class="card-header d-flex align-items-center"
+                     style="background-color:black; padding:10px; position:relative;">
+                    <h5 class="card-title" style="color:white; margin:0;">
+                        Estadística de Importe Total de Pago de Tasas Mensual (S/.)
+                    </h5>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                            <i class="fas fa-expand" hidden></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="col-md-2" style="margin-left: 50px;">
+                        <label>Selecciona período</label>
+                        <select id="periodo3" class="form-control" style="width: 100%;" onchange="drawVisualization3();">
+                            @for (int i = 2000; i <= 2050; i++)
+                            {
+                                if (i == year_current)
+                                {
+                                    <option value="@i" selected>@i</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div id="chart_div3" style="width: 100%; height: 350px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawVisualization3);
+
+            function errorHandler(errorMessage) {
+                console.log(errorMessage);
+                google.visualization.errors.removeError(errorMessage.id);
+            }
+
+            function drawVisualization3() {
+                var periodo3 = $("#periodo3").val();
+
+                $.ajax({
+                    url: '@Url.Action("ObtenerGraficoTasasMonto", "Home")',
+                    type: 'GET',
+                    data: { periodo3: periodo3 },
+                    dataType: 'json',
+                    success: function (obj) {
+                        var data = google.visualization.arrayToDataTable(obj);
+
+                        var options = {
+                            title: 'REPORTE DE PAGO DE TASAS - PERIODO ' + periodo3,
+                            vAxis: { title: 'Monto' },
+                            hAxis: { title: 'Meses' },
+                            seriesType: 'bars',
+                            colors: ['#21BF35'],
+                            series: { 5: { type: 'line' } }
+                        };
+
+                        var chart = new google.visualization.ComboChart(document.getElementById('chart_div3'));
+                        google.visualization.events.addListener(chart, 'error', errorHandler);
+                        chart.draw(data, options);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error al cargar gráfico: " + error);
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    drawVisualization3();
+                });
+            });
+        </script>
+
+
+        <div class="col-md-6" id="chart_cantidad_tasas">
+            <div class="card card-dark shadow-lg" style="transition: all 0.15s ease 0s; height: inherit; width: inherit;">
+
+                <div class="card-header d-flex align-items-center"
+                     style="background-color:black; padding:10px; position:relative;">
+                    <h5 class="card-title" style="color:white; margin:0;">
+                        Estadística de Cantidad de Pago de Tasas Mensual (S/.)
+                    </h5>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                            <i class="fas fa-expand" hidden></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="col-md-2" style="margin-left: 50px;">
+                        <label>Selecciona período</label>
+                        <select id="periodo4" class="form-control" style="width: 100%;" onchange="drawVisualization4();">
+                            @for (int i = 2000; i <= 2050; i++)
+                            {
+                                if (i == year_current)
+                                {
+                                    <option value="@i" selected>@i</option>
+                                }
+                                else
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div id="chart_div4" style="width: 100%; height: 350px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawVisualization4);
+
+            function errorHandler(errorMessage) {
+                console.log(errorMessage);
+                google.visualization.errors.removeError(errorMessage.id);
+            }
+
+            function drawVisualization4() {
+                var periodo4 = $("#periodo4").val();
+
+                $.ajax({
+                    url: '@Url.Action("ObtenerGraficoTasasCantidad", "Home")',
+                    type: 'GET',
+                    data: { periodo4: periodo4 },
+                    dataType: 'json',
+                    success: function (obj) {
+                        var data = google.visualization.arrayToDataTable(obj);
+
+                        var options = {
+                            title: 'REPORTE DE PAGO DE TASAS - PERIODO ' + periodo4,
+                            vAxis: { title: 'Cantidad' },
+                            hAxis: { title: 'Meses' },
+                            //seriesType: 'bars',
+                            colors: ['#17AAFF'],
+                            series: { 5: { type: 'line' } }
+                        };
+
+                        var chart = new google.visualization.AreaChart(document.getElementById('chart_div4'));
+                        google.visualization.events.addListener(chart, 'error', errorHandler);
+                        chart.draw(data, options);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error al cargar gráfico: " + error);
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    drawVisualization4();
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <br />
+
+
+    <script>
+        $(document).ready(function () {
+            $('#periodo').select2({
+                theme: 'bootstrap4',
+            });
+
+            $('#periodo2').select2({
+                theme: 'bootstrap4',
+            });
+
+            $('#periodo3').select2({
+                theme: 'bootstrap4',
+            });
+
+            $('#periodo4').select2({
+                theme: 'bootstrap4',
+            });
+
+        });
+    </script>
+
+</div>

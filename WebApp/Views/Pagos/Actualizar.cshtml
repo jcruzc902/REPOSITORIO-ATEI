@@ -1,0 +1,121 @@
+﻿
+@model IEnumerable<WebApp.ViewModels.DatosPagoViewModel>
+
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-refresh">&nbsp;</i>Operaciones </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa fa-database">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>
+        </section>
+    </div>
+    <br />
+    <div class="col-12 mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body bg-light-gray">
+                        @using (Ajax.BeginForm("ObtenerPagosRegistrados", "Pagos",
+                            new AjaxOptions
+                            {
+                                HttpMethod = "POST",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "resultadoConsulta",
+                                OnBegin = "BeforSend",
+                                OnComplete = "Complete"
+                            }))
+                        {
+                            <div id="datepicker" class="input-daterange form-row">
+                                <div class="form-group col-md-3 col-lg-2 col-sm-4 col-12">
+                                    <label for="inputCodAlu" class="control-label">Desde</label>
+                                    <div class="input-group">
+                                        @Html.TextBox("txtFecDesde", DateTime.Now.ToShortDateString(), new { @class = "form-control form-control-sm" })
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3 col-lg-2 col-sm-4 col-12">
+                                    <label for="inputCodAlu" class="control-label">Hasta</label>
+                                    <div class="input-group">
+                                        @Html.TextBox("txtFecHasta", DateTime.Now.ToShortDateString(), new { @class = "form-control form-control-sm" })
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-2 col-md-3 col-sm-4 col-12">
+                                    <label for="cboEntRecauda" class="control-label">Entidad Recaudadora</label>
+                                    @Html.DropDownList("cboEntRecauda", ViewBag.EntidadRecaudadora as SelectList, "[ SELECCIONAR ]", new { @class = "form-control form-control-sm" })
+                                </div>
+                                <div class="form-group col-lg-3 col-md-4 col-sm-5 col-12">
+                                    <label for="cboDependencia" class="control-label">Dependencia</label>
+                                    @Html.DropDownList("cboDependencia", ViewBag.Dependencia as SelectList, "[ SELECCIONAR ]", new { @class = "form-control form-control-sm" })
+                                </div>
+                                <div class="form-group col d-flex">
+                                    <button type="submit" class="btn btn-block btn-sm btn-outline-primary align-self-end"><i class="fa fa-fw fa-search-plus">&nbsp;</i> Iniciar consulta</button>
+                                </div>
+                                <div class="form-group col d-flex">
+                                    <a href="@Url.Action("RegistrarSiaf", "Pagos")" class="btn btn-primary btn-sm align-self-end modal-link"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i> Registrar Nº SIAF</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12 my-4" id="resultadoConsulta">
+        @Html.Partial("_ResultadoConsultaPagos", Model)
+    </div>
+    <div id="search-loader" class="container-fluid mt-5" style="display:none;">
+        <div class="d-flex justify-content-center py-4">
+            <div class="spinner-border mt-5 text-info" role="status" style="height: 5rem; width:5rem;">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <span id="load-message" class="h5">Buscando pagos...</span>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#datepicker.input-daterange').datepicker({
+            todayBtn: 'linked',
+            language: 'es',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            weekStart: 0,
+            orientation: 'bottom auto',
+            calendarWeeks: true
+        }).on('hide', function (e) {
+            e.stopPropagation();
+        });
+    })
+
+    function BeforSend() {
+        $('#resultadoConsulta').hide();
+        $('#search-loader').show();
+    }
+
+    function Complete() {
+        $('#resultadoConsulta').show();
+        $('#search-loader').hide();
+    }
+
+    function Error(errors) {
+        toastr.error("Ha ocurrido un error al procesar los datos.")
+    }
+
+
+</script>

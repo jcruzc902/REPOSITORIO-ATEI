@@ -1,0 +1,116 @@
+﻿@model WebApp.ViewModels.ClasificadorEquivalenciasAnioViewModel
+
+@Scripts.Render("~/bundles/jqueryval")
+
+<div class="modal-header bg-dark-gray" style="border-radius: .2rem .2rem 0px 0px">
+    <h5 class="modal-title text-center"><i class="fa bi-bar-chart-steps">&nbsp;</i> @ViewBag.Title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div class="container-fluid">
+        <div class="form-group form-row">
+
+            <div class="col-md-2 col-3">
+                @Html.LabelFor(model => model.Anio, new { @class = "control-label", })
+                @Html.Label(Model.Anio.ToString(), new { @class = "" })
+            </div>
+            <div class="col-md-10 col-9">
+                @Html.LabelFor(model => model.Clasificador, new { @class = "control-label", })
+                @Html.Label(Model.Clasificador, new { @class = "" })
+                <p class="text-danger small">@Html.ValidationMessageFor(model => model.Anio)</p>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.EquivalenciasConcepto, new { @class = "control-label col-md-2 col-3", })
+            <div class="col-md-10 col-9">
+                <div class="mb-3">
+                    @using (Ajax.BeginForm("AgregarConceptoEquivalencia", "Clasificadores", new { area = "" }, new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "listado_equivalencias",
+                        OnBegin = "LoadingListado",
+                        OnComplete = "Completed"
+                    }))
+                    {
+                        <div class="form-row">
+                            <div class="col-9">
+                                @Html.HiddenFor(model => model.Anio)
+                                @Html.HiddenFor(model => model.ClasificadorId)
+                                @Html.DropDownList("ConceptoEquivCod", ViewBag.Conceptos as SelectList, "", new { Class = "select-filter form-control form-control-sm" })
+                            </div>
+                            <div class="col-3">
+                                <button type="submit" id="btn-agregar" class="btn btn-sm btn-outline-primary" title="agregar" data-tooltip="tooltip" data-placement="bottom"><i class="fa fa-plus"></i><span class="d-none d-sm-block d-md-inline-block">&nbsp;Agregar</span></button>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div id="search-loader" class="container-fluid" style="display:none;">
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-info" role="status" style="width: 5rem; height: 5rem;">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <span id="load-message" class="h5 mt-4"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-offset-1" id="listado_equivalencias">
+                    @Html.Partial("_ListadoEquivalencias", Model.EquivalenciasConcepto)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer" id="div_msg">
+    <div class="col-md-12" style="display:none" id="loading">
+        <h6>Actualizando los datos...</h6>
+
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-secondary" id="btnCancel" data-dismiss="modal"><i class="fa fa-times-circle-o">&nbsp;</i>Cerrar</button>
+</div>
+
+<script>
+
+    $('#btnsubmit').removeClass('disabled');
+    $('[data-tooltip="tooltip"]').tooltip();
+
+
+    $('.select-filter').select2({
+        dropdownParent: $('#modal-container-lg'),
+        placeholder: "[ SELECCIONAR ]",
+        tags: true
+    }).on('hide', function (e) {
+        e.stopPropagation();
+    });
+
+    $(".modal").on('hide.bs.modal', function () {
+        location.reload();
+    })
+
+    function LoadingListado() {
+        $('#listado_equivalencias').hide();
+        $('#search-loader').show();
+    }
+
+    function Completed() {
+        let selectedValue = $('#ConceptoEquivCod').val();
+        if (selectedValue === "" || selectedValue == null) {
+            return false;
+        }
+
+        $('#ConceptoEquivCod option[value="' + selectedValue + '"]').remove();
+        $('#search-loader').hide();
+        $('#listado_equivalencias').show();
+
+    }
+
+</script>
+

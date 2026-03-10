@@ -1,0 +1,157 @@
+﻿@Scripts.Render("~/bundles/jqueryval")
+
+@{
+    var obligacion = (WebApp.Models.CuotaPagoModel)ViewBag.CuotaPago;
+    var detallePagos = (IEnumerable<WebApp.ViewModels.PagoBancoObligacionViewModel>)ViewBag.Pagos;
+    var soloLectura = (bool)ViewBag.SoloLectura;
+}
+
+<div class="modal-header bg-dark-gray" style="border-radius: .2rem .2rem 0px 0px">
+    <h5 class="modal-title text-center"><i class="fa bi-layers-half">&nbsp;</i> @ViewBag.Title</h5>
+    <button type="button" class="close closeModal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<div class="modal-body" id="cabeceraObligacion">
+    <dl class="row">
+        <dt class="col-sm-3">Alumno</dt>
+        <dd class="col-sm-9">@obligacion.T_NombresCompletos</dd>
+
+        <dt class="col-sm-3">Código</dt>
+        <dd class="col-sm-9">@obligacion.C_CodAlu</dd>
+
+        <dt class="col-sm-3">Periodo</dt>
+        <dd class="col-sm-9">@obligacion.I_Anio - @obligacion.T_Periodo</dd>
+
+        <dt class="col-sm-3">Cuota</dt>
+        <dd class="col-sm-9">@obligacion.T_ProcesoDesc</dd>
+
+        <dt class="col-sm-3">Monto</dt>
+        <dd class="col-sm-9" id="montoObligacion">@obligacion.T_MontoOblig</dd>
+
+        <dt class="col-sm-3">Vencimiento</dt>
+        <dd class="col-sm-9">@obligacion.T_FecVencto</dd>
+
+        <dt class="col-sm-3">Pagado a la fecha</dt>
+        <dd class="col-sm-9" id="montoPagado">@obligacion.T_MontoPagadoSinMora</dd>
+    </dl>
+</div>
+
+<div class="modal-body">
+    <table class="table table-bordered table-hover table-sm" id="tblPagos">
+        <thead>
+            <tr>
+                <th>Banco</th>
+                <th>Cod.Operacion</th>
+                <th>Fecha Pago</th>
+                <th>Monto</th>
+                <th>Mora</th>
+                <th>Comentarios</th>
+                @if (!soloLectura) {
+                    <th></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if (detallePagos != null)
+            {
+                foreach (var item in detallePagos)
+                {
+                    <tr>
+                        <td>@item.T_EntidadDesc<br />(@item.C_NumeroCuenta)</td>
+                        <td>@item.C_CodOperacion</td>
+                        <td>@item.T_FecPago</td>
+                        <td>@item.T_MontoPago</td>
+                        <td>@item.T_InteresMora</td>
+                        <td>@item.T_MotivoCoreccion</td>
+                        @if (!soloLectura) 
+                        {
+                            <td>
+                                <button class="btn btn-success btn-sm btnDesenlazarPago" data-id-pago-banco="@item.I_PagoBancoID">Quitar</button>
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="modal-footer" id="div_msg_pagos">
+    <div class="col-md-12" style="display: none;" id="loading">
+        <h6></h6>
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary closeModal"><i class="fa fa-times-circle-o"></i> Cancelar</button>
+</div>
+
+<script type="text/javascript">
+    $(document).on('click', '#tblPagos .btnDesenlazarPago', function (e) {
+        let idPagoBanco = $(this).data('id-pago-banco');
+        let idObligacion = @obligacion.I_ObligacionAluID;
+        let filaActual = $(this).parents('tr');
+        
+        Swal.fire({
+            title: '',
+            text: "¿Está seguro de desenlazar este pago a la obligación actual?.",
+            icon: MESSAGE_TYPE.WARNING,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, continuar.',
+            cancelButtonText: 'No, cancelar.',
+            input: 'textarea',
+            preConfirm: (obs) => {
+                return obs;
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                let parametros = {
+                    idPagoBanco: idPagoBanco,
+                    motivoCoreccion: result.value
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("DesenlazarPagoObligacion", "Pagos")',
+                    data: parametros,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        mostrarBarraEspera('div_msg_pagos', 'Retirando el pago de la obligación...');
+                    },
+                    success: function (data) {
+                        if (data !== null) {
+                            let icon = MESSAGE_TYPE.ERROR;
+
+                            if (data.Value) {
+                                icon = MESSAGE_TYPE.SUCCESS;
+
+                                filaActual.remove();
+
+                                let cabMontoObligacion = $('#cabeceraObligacion #montoObligacion');
+                                let cabMontoPagado = $('#cabeceraObligacion #montoPagado');
+
+                                actualizarMontosCabecera(idObligacion, cabMontoObligacion, cabMontoPagado);
+                            }
+
+                            Swal.fire({
+                                title: '',
+                                text: data.Message,
+                                icon: icon,
+                                timer: 6000
+                            });
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var jsonException = JSON.parse(xhr.responseText);
+                    },
+                    complete: function () {
+                        ocultarBarraEspera('div_msg_pagos');
+                    }
+                });
+            }
+        });
+    });
+</script>

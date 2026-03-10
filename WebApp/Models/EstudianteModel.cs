@@ -1,0 +1,244 @@
+﻿using Domain.Helpers;
+using Domain.Entities;
+using Domain.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using WebApp.ViewModels;
+using Domain.Services.Implementations;
+using System.IO;
+
+namespace WebApp.Models
+{
+    public class EstudianteModel
+    {
+        private IEstudianteService _estudiante;
+
+        public EstudianteModel()
+        {
+            _estudiante = new EstudianteService();
+        }
+
+        public SeleccionarArchivoViewModel Init(TipoAlumno tipoAlumno, TipoArchivoAlumno tipoArchivoAlumno)
+        {
+            var result = new SeleccionarArchivoViewModel();
+            string tipo = "";
+
+            result.TipoAlumno = tipoAlumno;
+            result.TipoArchivoAlumno = tipoArchivoAlumno;
+
+            switch (tipoAlumno)
+            {
+                case TipoAlumno.Pregrado:
+                    result.Color = "info";
+                    break;
+                case TipoAlumno.Posgrado:
+                    result.Color = "primary";
+                    break;
+                case TipoAlumno.SegundaEspecialidad:
+                    result.Color = "success";
+                    break;
+                case TipoAlumno.Residentado:
+                    result.Color = "secondary";
+                    break;
+            }
+
+            switch (tipoArchivoAlumno)
+            {
+                case TipoArchivoAlumno.Matricula:
+                    tipo = "Matricula";
+                    break;
+                case TipoArchivoAlumno.MultaNoVotar:
+                    tipo = "Multa";
+                    break;
+                case TipoArchivoAlumno.Estudiantes:
+                    tipo = "Estudiantes";
+                    break;
+            }
+
+            result.Action = "CargarArchivo" + tipo;
+
+            return result;
+        }
+
+        public DataMatriculaResponse CargarMatricula(string serverPath, HttpPostedFileBase file, TipoAlumno tipoAlumno, int currentUserId)
+        {
+            if (file == null)
+            {
+                return new DataMatriculaResponse()
+                {
+                    Message = "No existe archivo seleccionado."
+                };
+            }
+
+            DataMatriculaResponse response;
+            string fileName = "";
+
+            try
+            {
+                fileName = GuardarArchivoEnHost(serverPath, file);
+
+                response = GuardarDatosRepositorio(serverPath + fileName, tipoAlumno, currentUserId);
+            }
+            catch (Exception ex)
+            {
+                response = new DataMatriculaResponse()
+                {
+                    Message = ex.Message
+                };
+            }
+            finally
+            {
+                RemoverArchivo(serverPath, fileName);
+            }
+
+            return response;
+        }
+
+        private string GuardarArchivoEnHost(string serverPath, HttpPostedFileBase file)
+        {
+            try
+            {
+                string fileName = Guid.NewGuid() + "_" + Path.GetFileName(file.FileName);
+
+                file.SaveAs(serverPath + fileName);
+
+                return fileName;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private DataMatriculaResponse GuardarDatosRepositorio(string filePath, TipoAlumno tipoAlumno, int currentUserId)
+        {
+            var matriculaSource = MatriculaSourceFactory.Get(Path.GetExtension(filePath));
+
+            var dataMatriculas = matriculaSource.GetList(tipoAlumno, filePath);
+
+            var result = _estudiante.GrabarMatriculas(dataMatriculas, tipoAlumno, currentUserId);
+
+            return result;
+        }
+
+        private void RemoverArchivo(string serverPath, string fileName)
+        {
+            try
+            {
+                File.Delete(serverPath + fileName);
+            }
+            catch (Exception) { }
+        }
+
+        public MultaNoVotarResponse CargarMultasPorNoVotar(string serverPath, HttpPostedFileBase file, int currentUserId)
+        {
+            if (file == null)
+            {
+                return new MultaNoVotarResponse()
+                {
+                    Message = "No existe archivo seleccionado"
+                };
+            }
+
+            MultaNoVotarResponse response;
+            string fileName = "";
+            
+            try
+            {
+                fileName = GuardarArchivoEnHost(serverPath, file);
+
+                response = GuardarDatosRepositorio(serverPath + fileName, currentUserId);
+            }
+            catch (Exception ex)
+            {
+                response = new MultaNoVotarResponse()
+                {
+                    Message = ex.Message
+                };
+            }
+            finally
+            {
+                RemoverArchivo(serverPath, fileName);
+            }
+
+            return response;
+        }
+
+        private MultaNoVotarResponse GuardarDatosRepositorio(string filePath, int currentUserId)
+        {
+            var alumnosSinVotoSoruce = AlumnosSinVotoSourceFactory.Get(Path.GetExtension(filePath));
+
+            var alumnosSinVoto = alumnosSinVotoSoruce.GetList(filePath);
+
+            var result = _estudiante.GrabarAlumnosConMultaPorVoto(alumnosSinVoto, currentUserId);
+
+            return result;
+        }
+
+        public Response EliminarMatricula(int matAluID, int currentUserId)
+        {
+            Response response;
+
+            try
+            {
+                response = _estudiante.EliminarMatricula(matAluID, currentUserId);
+            }
+            catch (Exception ex)
+            {
+                response = new Response()
+                {
+                    Message = ex.Message
+                };
+            }
+
+            return response;
+        }
+
+        public DataEstudianteResponse CargarEstudiantes(string serverPath, HttpPostedFileBase file, int currentUserId)
+        {
+            if (file == null)
+            {
+                return new DataEstudianteResponse()
+                {
+                    Message = "No existe archivo seleccionado."
+                };
+            }
+
+            DataEstudianteResponse response;
+            string fileName = "";
+
+            try
+            {
+                fileName = GuardarArchivoEnHost(serverPath, file);
+
+                response = GuardarDatosEstudianteRepositorio(serverPath + fileName, currentUserId);
+            }
+            catch (Exception ex)
+            {
+                response = new DataEstudianteResponse()
+                {
+                    Message = ex.Message
+                };
+            }
+            finally
+            {
+                RemoverArchivo(serverPath, fileName);
+            }
+
+            return response;
+        }
+
+        private DataEstudianteResponse GuardarDatosEstudianteRepositorio(string filePath, int currentUserId)
+        {
+            var estudianteSource = EstudianteSourceFactory.Get(Path.GetExtension(filePath));
+
+            var dataEstudiantes = estudianteSource.GetList(filePath);
+
+            var result = _estudiante.GrabarEstudiantes(dataEstudiantes, currentUserId);
+
+            return result;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+﻿
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-refresh">&nbsp;</i>Operaciones </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa fa-user-plus">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>            
+        </section>
+    </div>
+    <br />
+
+    <div class="col-12">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item w-50" role="presentation">
+                <a class="nav-link h5 text-center active" id="pills-matricula-tab" data-toggle="pill" href="#pills-matricula" role="tab" aria-controls="pills-matricula" aria-selected="true">
+                    <i class="fa fa-fw bi-person-check">&nbsp;</i> Matrículas
+                </a>
+            </li>
+            <li class="nav-item w-50" role="presentation">
+                <a class="nav-link h5 text-center" id="pills-multa-tab" data-toggle="pill" href="#pills-multa" role="tab" aria-controls="pills-multa" aria-selected="false">
+                    <i class="fa fa-fw bi-box-seam">&nbsp;</i> Otros (Pregrado)
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-matricula" role="tabpanel" aria-labelledby="pills-matricula-tab">
+                <div class="row mt-4 d-flex justify-content-center">
+                    <div class="col-12 mb-3">
+                        <a class="pull-right mr-5" style="font-size:14px;" href="~/Assets/documentos/Formato_Matrícula.xlsx" target="_blank">
+                            <i class="fa fa-paperclip">&nbsp;</i> Formato de Carga Matricula
+                        </a>
+                        <h2 class="border-2 text-center">Relación de alumnos matriculados </h2>
+                    </div>
+                    
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-info">
+                            <div class="card-body text-info">
+                                <p class="h1 my-5"><i class="fa fa-2x fa-address-card"></i></p>
+                                <p class="h5">Alumnos Pregrado</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMatriculaPregrado", "Estudiantes")" class="btn btn-outline-info btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-primary">
+                            <div class="card-body text-primary">
+                                <p class="h1 my-5"><i class="fa fa-2x fa-graduation-cap"></i></p>
+                                <p class="h5">Alumnos Posgrado</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMatriculaPosgrado", "Estudiantes")" class="btn btn-outline-primary btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-success">
+                            <div class="card-body text-success">
+                                <p class="h1 my-5"><i class="fa fa-2x fa-book"></i></p>
+                                <p class="h5">Segunda Especialidad</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMatriculaSegundaEspecialidad", "Estudiantes")" class="btn btn-outline-success btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-secondary">
+                            <div class="card-body text-secondary">
+                                <p class="h1 my-5"><i class="fa fa-2x fa-medkit"></i></p>
+                                <p class="h5">Residentado Médico</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMatriculaResidentado", "Estudiantes")" class="btn btn-outline-secondary btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-multa" role="tabpanel" aria-labelledby="pills-multa-tab">
+                <div class="row mt-4 d-flex justify-content-center">
+                    <div class="col-12 mb-3">
+                        <h2 class="border-2 text-center">Otras relaciones para Pregrado</h2>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-info">
+                            <div class="card-body text-info">
+                                <p class="h1 my-5"><i class="fa fa-2x bi-person-badge"></i></p>
+                                <p class="h5">Relación de Ausentes en elecciones</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMultaPregrado", "Estudiantes")" class="btn btn-outline-info btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <div class="card text-center border-info">
+                            <div class="card-body text-info">
+                                <p class="h1 my-5"><i class="fa fa-2x bi-person-badge"></i></p>
+                                <p class="h5">Relación Cursos Desaprobados</p>
+                            </div>
+                            <div class="card-footer text-muted p-0">
+                                <a href="@Url.Action("CargarArchivoMultaPregrado", "Estudiantes")" class="btn btn-outline-info btn-block modal-link" style="padding:15px; border:none; border-radius:0px 0px 3px 3px;"><i class="fa fa-paperclip">&nbsp;</i>Adjuntar archivo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

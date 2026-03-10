@@ -1,0 +1,213 @@
+﻿@model WebApp.ViewModels.ReportePagosObligacionesTotalViewModel
+@Scripts.Render("~/bundles/jqueryval")
+
+<style>
+    .input-daterange {
+        display: flex !important;
+    }
+
+    @@media (max-width: 768px) {
+        .input-daterange {
+            display: block !important;
+        }
+    }
+
+    .celdaPintada {
+        background-color: rgba(0,0,0,.05);
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-search">&nbsp;</i>Consultas </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa bi-person-lines-fill">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>
+        </section>
+    </div>
+    <br />
+    <div class="col-12 mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body bg-light-gray">
+                        <form name="frmGenerarReporteOblTot" id="frmGenerarReporteOblTot" action="/" method="GET">
+                            <div class="form-row">
+                                <div class="form-group col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <label for="tipoReporte">Reporte</label>
+                                    @Html.DropDownListFor(model => model.tipoReporte, ViewBag.TipoReportes as SelectList, (string)ViewBag.LabelReporte, new { @class = "form-control form-control-sm text-uppercase", @required = "required" })
+                                </div>
+                                <div class="form-group col-lg-2 col-md-4 col-6">
+                                    <label for="anio">Año</label>
+                                    @Html.DropDownListFor(model => model.anio, ViewBag.Anios as SelectList, "TODOS", new { @class = "form-control form-control-sm" })
+                                </div>
+                                <div class="form-group col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <label for="tipoEstudio">Tipo de Estudio</label>
+                                    @Html.DropDownListFor(model => model.tipoEstudio, ViewBag.TipoEstudios as SelectList, new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+                                <div class="form-group col-xl-2 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <label for="dependencia">Facultad / Posgrado</label>
+                                    @Html.DropDownListFor(model => model.dependencia, ViewBag.Dependencias as SelectList, (string)ViewBag.LabelDependencias, new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-xl-2 col-lg-4 col-md-6">
+                                    <button type="button" id="btnConsultar" class="btn btn-block btn-outline-primary mt-4">
+                                        <i class="fa fa-fw fa-engine">&nbsp;</i> Generar reporte
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-10 col-lg-12 mx-auto my-4">
+        @if (Model != null && Model.reportePagosTotalPorAlumnoViewModel != null)
+        {
+            <button type="button" id="btnExcelDescargar" class="btn btn-link pl-0">Descargar información en Excel [.xlsx]</button>
+
+            @Html.Partial("_ReporteTotalPorAlumno", Model.reportePagosTotalPorAlumnoViewModel)
+        }
+
+        @if (Model != null && Model.reportePagosTotalPorAñoViewModel != null)
+        {
+            <button type="button" id="btnExcelDescargar" class="btn btn-link pl-0">Descargar información en Excel [.xlsx]</button>
+
+            @Html.Partial("_ReporteTotalPorDependencia", Model.reportePagosTotalPorAñoViewModel)
+        }
+
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const REPORTE_GENERAL = "G";
+        const REPORTE_CONCEPTO = "C";
+        const REPORTE_FACULTAD = "F";
+
+
+        function MostrarMensaje(text) {
+            Swal.fire({
+                title: '',
+                text: text,
+                icon: "error",
+                timer: 6000
+            });
+        }
+
+
+        $(document).on("change", "#frmGenerarReporteOblTot #tipoEstudio", function (e) {
+            CargarDependencias($(this).val());
+
+            //let cmbDependencia = $('#frmGenerarReporteOblTot #dependencia');
+
+            //if ($('#frmGenerarReporteOblTot #tipoReporte').val() === REPORTE_FACULTAD) {
+            //    cmbDependencia.prop('disabled', false);
+            //} else {
+            //    cmbDependencia.prop('disabled', true);
+            //}
+        });
+
+        function CargarDependencias(tipoEstudio) {
+            let cmbDependencia = $('#frmGenerarReporteOblTot #dependencia');
+
+            let parametros = {
+                tipoEstudio: tipoEstudio
+            };
+
+            $.ajax({
+                type: 'GET',
+                url: ('@Url.Action("GetFacultades", "Service", new { httproute = "ActionApi" })'),
+                data: parametros,
+                dataType: 'json',
+                beforeSend: function () {
+                    cmbDependencia.html('');
+                },
+                success: function (data) {
+                    if (data && data.length > 0) {
+                        let html = '<option value="">TODOS</option>';
+
+                        $.each(data, function (i, item) {
+                            html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+                        });
+
+                        cmbDependencia.html(html);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                }
+            });
+        }
+
+        $(document).on("click", "#btnConsultar", function (e) {
+            let cmbReporte = $('#frmGenerarReporteOblTot #tipoReporte');
+
+            if (cmbReporte.val() === '') {
+                MostrarMensaje("Debe seleccionar un Tipo de Reporte.");
+            } else {
+                document.forms.frmGenerarReporteOblTot.action = "@Url.Action("ReportesPagoObligacionesTotal", "EstadosCuenta")";
+                document.forms.frmGenerarReporteOblTot.submit();
+            }
+        });
+
+        $(document).on("click", "#btnExcelDescargar", function (e) {
+            let cmbReporte = $('#frmGenerarReporteOblTot #tipoReporte');
+
+            if (cmbReporte.val() === '') {
+                MostrarMensaje("Debe seleccionar un Tipo de Reporte.");
+            } else {
+                document.forms.frmGenerarReporteOblTot.action = "@Url.Action("DescargaReportesPagoObligacionesTotal", "EstadosCuenta")";
+                document.forms.frmGenerarReporteOblTot.submit();
+            }
+        });
+
+        //$(document).on('change', '#frmGenerarReporteOblTot #idEntidadFinanciera', function (e) {
+        //    let idEntidadFinanc = this.value;
+
+        //    ObtenerCtasDeposito(idEntidadFinanc);
+        //});
+
+        @*function ObtenerCtasDeposito(idEntidadFinanc) {
+            let cmbCtasDeposito = $('#frmGenerarReporteOblTot #ctaDeposito');
+
+            if (idEntidadFinanc !== undefined && idEntidadFinanc !== null && !isNaN(idEntidadFinanc) && idEntidadFinanc > 0) {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetCtasDepositoPorBco", "Service", new { httproute = "ActionApi" })' + '/' + idEntidadFinanc,
+                    dataType: 'json',
+                    beforeSend: function () {
+                        cmbCtasDeposito.empty();
+                    },
+                    success: function (data) {
+                        if (data) {
+                            let html = '<option>TODOS</option>';
+
+                            $.each(data, function (i, item) {
+                                html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>';
+                            });
+
+                            cmbCtasDeposito.html(html);
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var jsonException = JSON.parse(xhr.responseText);
+                        //MostrarMensajeSistema(jsonException.Message, 'error');
+                    }
+                });
+            } else {
+                cmbCtasDeposito.empty();
+                let html = '<option>TODOS</option>';
+                cmbCtasDeposito.html(html);
+            }
+        }*@
+    </script>
+}

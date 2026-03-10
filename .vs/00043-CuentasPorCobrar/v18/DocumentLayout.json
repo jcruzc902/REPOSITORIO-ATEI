@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|c:\\agei\\repositorio-agei-060326\\webapp\\views\\estudiantes\\consulta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\estudiantes\\consulta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|c:\\agei\\repositorio-agei-060326\\webapp\\controllers\\estudiantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\estudiantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|c:\\agei\\repositorio-agei-060326\\webapp\\views\\estudiantes\\_seleccionararchivo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\estudiantes\\_seleccionararchivo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|c:\\agei\\repositorio-agei-060326\\webapp\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\shared\\_sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|c:\\agei\\repositorio-agei-060326\\webapp\\views\\estudiantes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\estudiantes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|C:\\AGEI\\REPOSITORIO-AGEI-060326\\webapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{742A89E9-F598-4144-9EB5-6DF18D7824AF}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Sidebar.cshtml",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Shared\\_Sidebar.cshtml",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Shared\\_Sidebar.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Shared\\_Sidebar.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADEAAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T17:42:47.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Consulta.cshtml",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\Consulta.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Estudiantes\\Consulta.cshtml",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\Consulta.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Estudiantes\\Consulta.cshtml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAALIAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T18:02:00.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_SeleccionarArchivo.cshtml",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\_SeleccionarArchivo.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Estudiantes\\_SeleccionarArchivo.cshtml",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\_SeleccionarArchivo.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Estudiantes\\_SeleccionarArchivo.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T17:24:59.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Estudiantes\\Index.cshtml",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Estudiantes\\Index.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Estudiantes\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T17:19:40.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstudiantesController.cs",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Controllers\\EstudiantesController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\EstudiantesController.cs",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Controllers\\EstudiantesController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\EstudiantesController.cs",
+              "ViewState": "AgIAAAoBAAAAAAAAAADwvxsBAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T14:00:43.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\AGEI\\REPOSITORIO-AGEI-060326\\WebApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAIEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-07T20:29:22.666Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

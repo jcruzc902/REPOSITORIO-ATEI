@@ -1,0 +1,159 @@
+﻿@model WebApp.ViewModels.FiltroEnvioObligacionesViewModel
+<style>
+    .input-daterange {
+        display: flex !important;
+    }
+
+    @@media (max-width: 768px) {
+        .input-daterange {
+            display: block !important;
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="col-12">
+        <section class="content-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-right small d-none d-sm-inline-flex">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home">&nbsp;</i>Inicio</a></li>
+                    <li class="breadcrumb-item"><span><i class="fa fa-refresh">&nbsp;</i>Operaciones </span></li>
+                    <li class="breadcrumb-item active"><span><i class="fa bi-journal-arrow-down">&nbsp;</i>@ViewBag.Title </span></li>
+                </ol>
+            </nav>
+            <h1 class="">@ViewBag.Title <small></small></h1>
+        </section>
+    </div>
+    <br />
+    <div class="col-12 mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body bg-light-gray">
+                        <form id="frmExportarPago" action="@Url.Action("GenerarArchivosBancos", "Pagos")" method="POST">
+                            @Html.AntiForgeryToken()
+                            <div class="form-row">
+                                <div class="form-group col-xl-2 col-lg-4 col-md-4 col-sm-12 col-12">
+                                    <label for="I_EntidadFinanciera">Banco</label>
+                                    @Html.DropDownListFor(model => model.I_EntidadFinanciera, ViewBag.EntidadesFinancieras as SelectList, null, new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+                                <div class="form-group col-xl-1 col-lg-4 col-md-4 col-sm-4 col-12">
+                                    <label for="E_TipoEstudio">Tipo de estudio</label>
+                                    @Html.DropDownListFor(model => model.E_TipoEstudio, new SelectList(ViewBag.TipoEstudios, "Value", "TextDisplay"), "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+                                <div class="form-group col-xl-1 col-lg-4 col-md-4 col-sm-4 col-6">
+                                    <label for="I_Anio">Año</label>
+                                    @Html.DropDownListFor(model => model.I_Anio, new SelectList(ViewBag.Anios, "Value", "TextDisplay"), new { @class = "form-control form-control-sm" })
+                                </div>
+                                <div class="form-group col-xl-1 col-lg-4 col-md-4 col-sm-4 col-6">
+                                    <label for="I_Periodo">Periodo</label>
+                                    @Html.DropDownListFor(model => model.I_Periodo, new SelectList(ViewBag.Periodos, "Value", "TextDisplay"), "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+                                <div class="form-group col-xl-3 col-lg-8 col-md-8 col-sm-12 col-12">
+                                    <label for="T_Dependencia">Facultades/Posgrado</label>
+                                    @Html.DropDownListFor(model => model.T_Dependencia, new SelectList(ViewBag.Dependencias, "Value", "TextDisplay"), "TODOS", new { @class = "form-control form-control-sm text-uppercase" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-xl-2 col-lg-4 col-md-6">
+                                    <button type="submit" class="btn btn-block btn-outline-primary mt-4" onclick="clickk()">
+                                        <i class="fa fa-fw fa-engine">&nbsp;</i> Generar archivo
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" id="generarObligMsj" style="margin-top: 5px;">
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const BANCO = {
+            COMERCIO: 1,
+            BCP: 2
+        };
+
+        $("#frmExportarPago").on("change", "#I_EntidadFinanciera", function (e) {
+            let idBanco = $(this).val();
+
+            let html = '';
+
+            cmbTipoEstudio = $('#frmExportarPago #E_TipoEstudio');
+
+            cmbTipoEstudio.html('');
+
+            if (idBanco == BANCO.COMERCIO) {
+                html += '<option value="Pregrado" selected="selected">Pregrado</option>';
+                html += '<option value="Posgrado">Posgrado</option>';
+                html += '<option value="Segunda_Especialidad">Segunda_Especialidad</option>';
+                html += '<option value="Residentado">Residentado</option>';
+            } else if (idBanco == BANCO.BCP) {
+                html += '<option value="" selected="selected">TODOS</option>';
+                html += '<option value="Pregrado">Pregrado</option>';
+                html += '<option value="Posgrado">Posgrado</option>';
+                html += '<option value="Segunda_Especialidad">Segunda_Especialidad</option>';
+                html += '<option value="Residentado">Residentado</option>';
+
+                $('#frmExportarPago #I_Periodo').val('');
+            }
+
+            cmbTipoEstudio.html(html);
+
+            CargarDependencias(cmbTipoEstudio.val());
+        });
+
+        $("#frmExportarPago").on("change", "#E_TipoEstudio", function (e) {
+            let anio = $('#I_Anio').val();
+            let periodo = $('#I_Periodo').val();
+            let tipoEstudio = $(this).val();
+
+            CargarDependencias(tipoEstudio);
+        });
+
+        function CargarDependencias(tipoEstudio) {
+            let cmbDependencia = $('#T_Dependencia');
+
+            let html = '<option value="">TODOS</option>';
+
+            cmbDependencia.html('');
+
+            if (tipoEstudio !== "") {
+                let parametros = {
+                    tipoEstudio: tipoEstudio
+                };
+
+                $.ajax({
+                    type: 'GET',
+                    url: ('@Url.Action("GetFacultades", "Service", new { httproute = "ActionApi" })'),
+                    data: parametros,
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    success: function (data) {
+                        if (data && data.length > 0) {
+                            $.each(data, function (i, item) {
+                                html += '<option value="' + item.Value + '">' + item.TextDisplay + '</option>'
+                            });
+
+                            cmbDependencia.html(html);
+                        }
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                    }
+                });
+            } else {
+                cmbDependencia.html(html);
+            }
+        }
+    </script>
+}
+
