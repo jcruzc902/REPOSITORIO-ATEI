@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini</title>
+  <style>
+    /* CSS para el formulario de consulta a GEMINI */
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .contenedor {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+    }
+
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 10px;
+      white-space: pre-wrap;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1>Formulario de Consulta a GEMINI</h1>
+    <form id="formulario1">
+      <div>
+        <textarea id="consulta" name="consulta"></textarea>
+      </div>
+      <input type="submit" value="Consultar">
+      <pre id="resultado"></pre>
+    </form>
+  </div>
+
+  <script>
+    const formulario1 = document.querySelector("#formulario1")
+
+    formulario1.addEventListener("submit", evento => {
+      evento.preventDefault()
+
+      const consulta = document.querySelector("#consulta").value.trim()
+      const botonConsultar = document.querySelector("input[type='submit']")
+
+      // Desactivar el botón y mostrar mensaje de espera
+      botonConsultar.disabled = true;
+      botonConsultar.value = "Espere, por favor..."
+
+      const datosFormulario = new FormData()
+      datosFormulario.append("consulta", consulta)
+
+      fetch("consulta.php", {
+        method: 'POST',
+        body: datosFormulario
+      }).then(respuesta => respuesta.json())
+        .then(respuesta => {
+          // Mostrar la respuesta y reactivar el botón
+          document.querySelector("#resultado").innerHTML = `${respuesta.mensaje}<br>`
+          botonConsultar.disabled = false
+          botonConsultar.value = "Consultar"
+        })
+        .catch(error => {
+          console.error('Error en la solicitud fetch:', error)
+          // Reactivar el botón en caso de error
+          botonConsultar.disabled = false
+          botonConsultar.value = "Consultar"
+        })
+    });
+  </script>
+</body>
+
+</html>
